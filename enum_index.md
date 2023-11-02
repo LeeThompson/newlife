@@ -1,3 +1,5 @@
+## Age
+
 | ENUM | Scope | Type | Description | Notes |
 | :--- | :---- | :--- | :---------- | :---- |
 | `LATE_TEENS` | PC/NPCs | Age | 18 or 19 years-old | You mustn't use text to imply she's younger. |
@@ -7,6 +9,9 @@
 | `FORTIES` | NPCs | Age |  | Male Only |
 | `FIFTIES` | NPCs | Age |  | Male Only |
 | `OLD` | NPCs | Age | Any character 60 or older. | Male Only |
+
+## Breasts
+
 | `SMALL` | PC/NPCs | Breast Size | small but perky tits | |
 | `MEDIUM_SMALL` | PC/NPCs | Breast Size | pert tits | |
 | `MEDIUM_LARGE` | PC/NPCs | Breast Size | full breasts | |
