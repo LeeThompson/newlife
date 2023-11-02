@@ -7,3 +7,7 @@
 | `FORTIES` | NPCs | Age |  | Male Only |
 | `FIFTIES` | NPCs | Age |  | Male Only |
 | `OLD` | NPCs | Age | Any character 60 or older. | Male Only |
+| `SMALL` | PC/NPCs | Breast Size | small but perky tits | |
+| `MEDIUM_SMALL` | PC/NPCs | Breast Size | pert tits | |
+| `MEDIUM_LARGE` | PC/NPCs | Breast Size | full breasts | |
+| `LARGE` | PC/NPCs | Breast Size | heavy breasts | |
