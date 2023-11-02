@@ -1,4 +1,4 @@
-# Arousal
+## Arousal
 
 | Function | Type | Scope | Mechanic/Item | Change | Parameters | Returns |
 | :------- | :--- | :---- | :------------ | :----- | :---- | :---- |
@@ -22,7 +22,7 @@
 | [setArousalClose](Context-Objects#setarousalclose-void) | Modify |  PC/NPC | Arousal | Sets arousal level to the "close" threshold | None  | Void |
 | [setArousalOrgasm](Context-Objects#setarousalorgasm-void) | Modify | PC/NPC | Arousal | Sets arousal level to the "orgasm" threshold | None  | Void |
 
-# Alcohol
+## Alcohol
 
 | Function | Type | Scope | Mechanic/Item | Change | Parameters | Returns |
 | :------- | :--- | :---- | :------------ | :----- | :---- | :---- |
@@ -33,3 +33,4 @@
 | [reduceAlcoholSmall](Context-Objects#reducealcoholsmall-void) | Modify | PC/NPC | Alcohol | Small decrease | None  | Void |
 | [reduceAlcoholMedium](Context-Objects#reducealcoholmedium-void) | Modify | PC/NPC | Alcohol | Moderate decrease | None  | Void |
 | [reduceAlcoholLarge](Context-Objects#reducealcohollarge-void) | Modify | PC/NPC | Alcohol | Significant decrease | None  | Void |
+
