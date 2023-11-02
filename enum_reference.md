@@ -46,48 +46,49 @@ Age is also checked for dialogue or text that references age differences: typica
 - I have had some requests to open up older ages for female characters, and may do so in the future. For the time being though you shouldn't worry about writing for characters that can't exist in the current version of the game.
 
 **FUNCTIONS:**
-[isOlderThan](Context-Objects#isolderthanstring-age-boolean)
+- [getAge](Context-Objects#getage-string)
+- [getAge](Context-Objects#getage-int) (Baby)
+- [getAgeDesc](Context-Objects#getagedesc-string)
+- [isOlderThan](Context-Objects#isolderthanstring-age-boolean)
 
 
 ### Breasts
 
-For the PC and female NPCs, retrieved using the getBreasts() method. The
-related getBreastsDesc() returns a short descriptive string that can be
-inserted into descriptions. The PC's size increases by one level in the
-late stages of pregnancy, and returns to normal after birth – this is
-automatically handled by getBreasts.
-
-Use the male NPC methods likesPlayersBreasts() and
-dislikesPlayersBreasts() to get a male Npc's opinions on the PC's
-breasts. This checks the various preference traits for liking
-small/medium/large breasts. An NPC with no preference trait will return
-false for both these methods.
-
-There's often cause for unique content or text based on the player or
-NPC's breast-size, from descriptions when an NPC touches them through to
-low-self-esteem characters feeling insecure about their size.
+For the `getBreasts` method for [PC](Context-Objects#getbreasts-string) and female [NPCs]((Context-Objects#getbreasts-string-1).
 
 The possible values along with their associated descriptions are:
 
-SMALL: "small but perky tits"
+| ENUM | Scope | Description | Notes |
+| :--- | :---- | :---------- | :---- |
+| `SMALL` | PC/NPCs | small but perky tits | |
+| `MEDIUM_SMALL` | PC/NPCs | pert tits | |
+| `MEDIUM_LARGE` | PC/NPCs| full breasts | |
+| `LARGE` | PC/NPCs | heavy breasts | |
 
-MEDIUM\_SMALL: "pert tits"
+**NOTES:**
+- There's often cause for unique content or text based on the player or NPC's breast-size, from descriptions when an NPC touches them through to low-self-esteem characters feeling insecure about their size.
+- Adjectives like pert, perky, full and heavy do *not* have to be restricted to that particular breast size, and you should feel free to use them for other sizes in your writing if it's appropriate to do so.
+- When writing about breasts, you may also want to consider the [isLactating](Context-Objects#islactating-boolean) method and the `SENSITIVE_BREASTS` trait.
+- If you're writing about whether her nipples are erect or not then you should check her *arousal* ("comfort" level or higher can have erect nipples).
+- Clothing also has a large impact on descriptions of the PC's body, especially things like breasts where you may need to consider her bra and top status and whether her top (if worn) is `LOWCUT`, `THIN` or `SHEER`.
 
-MEDIUM\_LARGE: "full breasts"
+**FUNCTIONS:**
+- [getBreasts](Context-Objects#getbreasts-string) (PC)
+- [getBreasts](Context-Objects#getbreasts-string-1) (NPC)
+- [getBreastsDesc](Context-Objects#getbreastsdesc-string) (PC)
+- [getBreastsDesc](Context-Objects#getbreastsdesc-string-1) (NPC)
+- [getLikesBreasts](Context-Objects#getlikesbreastscontextfemalenpc-boolean) (NPC)
+- [getDislikesBreasts](Context-Objects#getdislikesbreastscontextfemalenpc-boolean) (NPC)
+- [getLikesPlayersBreasts](Context-Objects#getlikesplayersbreasts-boolean) (PC)
+- [getDislikesPlayersBreasts](Context-Objects#getdislikesplayersbreasts-boolean) (PC)
+- [isBreastsExposed](Context-Objects#isbreastsexposed-boolean) (PC)
+- [isBreastsExposed](Context-Objects#isbreastsexposed-boolean-1) (NPC)
+- [isBreastsLargerThanPc](Context-Objects#isbreastslargerthanpc-boolean)
+- [isBreastsSmallerThanPc](Context-Objects#isbreastssmallerthanpc-boolean)
+- [isLactating](Context-Objects#islactating-boolean) (PC)
+- [isLactating](Context-Objects#islactating-boolean-1) (NPC) 
 
-LARGE: "heavy breasts"
 
-Adjectives like pert, perky, full and heavy do not have to be restricted
-to that particular breast size, and you should feel free to use them for
-other sizes in your writing if it's appropriate to do so.
-
-When writing about breasts, you may also want to consider the
-isLactating method and the SENSITIVE\_BREASTS trait. If you're writing
-about whether her nipples are erect or not then you should check her
-arousal ("comfort" level or higher can have erect nipples). Clothing
-also has a large impact on descriptions of the PC's body, especially
-things like breasts where you may need to consider her bra and top
-status and whether her top (if worn) is lowcut, thin or sheer.
 
 ### Character Type
 
@@ -2976,6 +2977,6 @@ The NPC will always wear a condom before sex unless the PC specifically
 asks him not to. TryingForBaby status will override this.
 
 ----
-draft 2023-10-30 17:01 GMT-7
+first draft; 202311011318
 
 

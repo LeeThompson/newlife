@@ -957,6 +957,8 @@ Returns a string describing the PC's breasts.
 **NOTES:**
 - String is lowercase with no preceding or trailing spaces.
 - See the enum section on Breasts for the descriptions of each breast-size.
+- Size will increase by one level in the late stages of pregnancy, returning to normal after birth.
+- Female NPCs have this [method](Context-Objects#getbreastsdesc-string-1) as well.
 
 #### getFigureDesc(): String
 
@@ -1241,12 +1243,12 @@ Returns the PC's figure as an enum string value.
 Returns the PC's breast size as a string enum. 
 
 **BREAST TYPES:**
-| Enum | Description |
-| ---- | ------------ |
-| `SMALL` | "small but perky tits" |
-| `MEDIUM_SMALL` | "pert tits" |
-| `MEDIUM_LARGE` | "full breasts" |
-| `LARGE` | "heavy breasts" |
+| ENUM | Scope | Description | Notes |
+| :--- | :---- | :---------- | :---- |
+| `SMALL` | PC/NPCs | small but perky tits | |
+| `MEDIUM_SMALL` | PC/NPCs | pert tits | |
+| `MEDIUM_LARGE` | PC/NPCs| full breasts | |
+| `LARGE` | PC/NPCs | heavy breasts | |
 
 **NOTES:**
 - This isn't suitable to be inserted into text shown to the player, use `getBreastsDesc` for that. See the enum reference for possible values.
@@ -1319,6 +1321,8 @@ Returns `true` if the PC is lactating.
 **NOTES:**
 - Lactation is something which may be worth mentioning in descriptions or in text based around her breasts.
 - You shouldn't make assumptions about pregnancy from this trait. It's possible to not be lactating despite being heavily pregnant (if lactation is disabled in the game options) and it's possible to be lactating despite never having been pregnant due to the milky trait.
+- Female NPCs have a [method](Context-Objects#islactating-boolean-1) that uses the same name.
+
 
 #### isMum(): boolean
 
@@ -2518,7 +2522,8 @@ Returns a string describing the NPC's breasts.
 **NOTES:**
 - String is lowercase with no preceding or trailing spaces.
 - See the enum section on Breasts for the descriptions of each breast-size.
-- Identical to the PC's method of the same name.
+- Size will increase by one level in the late stages of pregnancy, returning to normal after birth.
+- PC has this [method](Context-Objects#getbreastsdesc-string) as well.
 
 **Example:** `full breasts`.
 
@@ -2680,12 +2685,12 @@ Returns `true` if the character is completely naked *or* if she's only wearing l
 Returns the NPC's breast size as a string enum. 
 
 **BREAST TYPES:**
-| Enum | Description |
-| ---- | ------------ |
-| `SMALL` | "small but perky tits" |
-| `MEDIUM_SMALL` | "pert tits" |
-| `MEDIUM_LARGE` | "full breasts" |
-| `LARGE` | "heavy breasts" |
+| ENUM | Scope | Description | Notes |
+| :--- | :---- | :---------- | :---- |
+| `SMALL` | PC/NPCs | small but perky tits | |
+| `MEDIUM_SMALL` | PC/NPCs | pert tits | |
+| `MEDIUM_LARGE` | PC/NPCs| full breasts | |
+| `LARGE` | PC/NPCs | heavy breasts | |
 
 **NOTES:**
 - This isn't suitable to be inserted into text shown to the player, use `getBreastsDesc` for that. See the enum reference for possible values.
@@ -2773,7 +2778,7 @@ Returns `true` if the character is lactating.
 **NOTES:**
 - Lactation is something which may be worth mentioning in descriptions or in text based around her breasts.
 - You shouldn't make assumptions about pregnancy from this trait. It's possible to not be lactating despite being heavily pregnant (if lactation is disabled in the game options) and it's possible to be lactating despite never having been pregnant due to the milky trait.
-- Identical to the PC method of the same name.
+- Identical to the PC [method](Context-Objects#islactating-boolean) of the same name.
 
 #### isMum(): boolean
 
@@ -3785,6 +3790,6 @@ Returns `true` if the "allow anal" game option has been set.
 - Check this before writing any anal content.
 
 ----
-draft 2023-10-30 17:04 GMT-7
+second draft; 202311011318
 
 
