@@ -54,7 +54,7 @@ Age is also checked for dialogue or text that references age differences: typica
 
 ### Breasts
 
-For the `getBreasts` method for [PC](Context-Objects#getbreasts-string) and female [NPCs]((Context-Objects#getbreasts-string-1).
+For the `getBreasts` method for [PC](Context-Objects#getbreasts-string) and female [NPCs](Context-Objects#getbreasts-string-1).
 
 The possible values along with their associated descriptions are:
 
@@ -2975,8 +2975,4 @@ ALWAYS\_CONDOMS:
 
 The NPC will always wear a condom before sex unless the PC specifically
 asks him not to. TryingForBaby status will override this.
-
-----
-first draft; 202311011318
-
 
