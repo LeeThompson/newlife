@@ -16,7 +16,7 @@ Newlife is written in [Java](https://en.wikipedia.org/wiki/Java_(programming_lan
 This document assumes a general knowledge of programming, particularly with languages that used [typed](https://en.wikipedia.org/wiki/Data_type) variables.
 
 | Extension | Format | Usage |
-| --------- | ------ | ---- |
+| :-------- | :----- | :--- |
 | `yml` | YAML | Scene Description |
 | `vm` | Velocity | Scene Content |  
 
@@ -32,7 +32,7 @@ To call a method use `$objectname.methodname(parameters)`. See the [Velocity Use
 Types used in parameters or return type are:
 
 | Type | Description | Notes |
-| ---- | ----------- | ----- |
+| :--- | :---------- | :---- |
 | Object | This is an object type as defined here (e.g ClothingItem). | Sometimes abbreviated as "obj". Further methods can be called on this e.g. `$w.getLegwear().getBasicDesc()` |
 | String | A text string. | Sometimes abbreviated as "str". These include both Strings intended for direct insertion into output and enumerated values.  |
 | Enum | An enumerated string. | These are technically strings but valid values are from a set range.  They are usually all uppercase.  They are defined in the enum reference documentation that are intended to be tested in conditional statements. If a method takes an enum value as a parameter then it will error if provided a String that isn't a valid type for that enum. |
@@ -45,13 +45,9 @@ Velocity also uses the above types and also uses lists (single dimension arrays)
 ## Contexts and Objects
 
 | Context | Description | Notes |
-| ------- | ----------- | ----- |
+| :------ | :---------- | :---- |
 | `$scene` | Scene context | |
 | `$gd` | Global game data context | |
-
-
-| Object | Description | Notes |
-| ------- | ----------- | ----- |
 | `$w` | Player character or "PC" | Sometimes referred to as a "MC" (main character). |
 | `$npc` | Non-player character or "NPC" | |
 
@@ -3789,7 +3785,5 @@ Returns `true` if the "allow anal" game option has been set.
 **NOTES:**
 - Check this before writing any anal content.
 
-----
-second draft; 202311011318
 
 
