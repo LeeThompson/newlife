@@ -18,7 +18,7 @@ This document lists the valid values for various enums relevant to Newlife playe
 **IMPORTANT:**
 When testing for enum values in if statements or passing them into methods the text you use will usually need to be case-sensitive and match exactly. Enum values are *always* written in ALL-CAPS.
 
-
+----
 ### Age
 
 All characters have an age, although not all options are available for all characters. Age has a small effect on attraction.  Male NPCs can be any age, but female ones, including the PC, can be no older than their thirties.  
@@ -51,7 +51,7 @@ Age is also checked for dialogue or text that references age differences: typica
 - [getAgeDesc](Context-Objects#getagedesc-string)
 - [isOlderThan](Context-Objects#isolderthanstring-age-boolean)
 
-
+----
 ### Breasts
 
 For the `getBreasts` method for [PC](Context-Objects#getbreasts-string) and female [NPCs](Context-Objects#getbreasts-string-1).
