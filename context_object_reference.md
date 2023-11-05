@@ -54,6 +54,9 @@ Velocity also uses the above types and also uses lists (single dimension arrays)
 **NOTES:**
 - The PC is *always* female.  Depending on game options, the PC is either a transformed female or a "born female".
 
+## Notes
+- Some methods exist for both the PC and NPCs, they will *usually* work the same, however, there are exceptions to this.  
+
 ## Document Organization
 
 This document is divided into sections:
@@ -2378,12 +2381,10 @@ These methods modify one or more clothing slot's status.
 
 **DEVELOPER TIPS:**
 - These methods should be used when the NPC dresses or undresses, but also if her clothes become disheveled.  This is far less common for Female NPCs than for the PC, but can still happen on occasion.
-- Also see the Character `fixClothing()` and `stripNaked()` methods which remove or put on all of the character's clothing.
+- Also see the Character [fixClothing](Context-Objects#fixclothing-void) and [stripNaked](Context-Objects#stripnaked-void) methods which remove or put on all of the character's clothing.
 
 **WARNING:**
-Be careful about setting clothing statuses. If an outfit did not include, say, a bra but you call `setBraStatus("WORN")` then they'll 
-be described as wearing a "braless" and descriptive text will get muddled indeed. As a rule of thumb it's fine to *un*dress a character, 
-but it's safest to use `fixClothing` if you need to put clothes back on.
+- Be careful about setting clothing status directly. If an outfit did not include, say, a bra but you call [setBraStatus("WORN")](Context-Objects#setbrastatusstring-status-void) then they'll be described as wearing a "braless" and descriptive text will get muddled indeed. As a rule of thumb it's fine to *un*dress a character, but it's safest to use [fixClothing](Context-Objects#fixclothing-void) if you need to put clothes back on.
 
 **Clothing Status Types:**
 | Enum | Description | Notes |
@@ -2427,7 +2428,7 @@ Sets upper-body clothing to the supplied status.
 
 #### stripExceptLegwear(): void
 
-Like `stripNaked` but will not remove any worn legwear.
+Like [stripNaked](Context-Objects#stripnaked-void) but will not remove any `WORN` legwear.
 
 ### Other Actions
 
@@ -2665,14 +2666,14 @@ Returns `true` if the NPC's breasts are uncovered.
 
 #### isStomachExposed(): boolean
 
-Returns `true` if the PC's stomach is bare, either due to her top being `OFF` or `EXPOSED` or due to it having the `SHOWS_TUMMY` flag.
+Returns `true` if the NPC's stomach is bare, either due to her top being `OFF` or `EXPOSED` or due to it having the `SHOWS_TUMMY` flag.
 
 **NOTES:**
 - Identical to the PC's method of the same name.
 
 #### isClothesDisarrayed(): boolean
 
-Returns `true` if *any* of the PC's outfit has been disarrayed in any way.
+Returns `true` if *any* of the NPC's outfit has been disarrayed in any way.
 
 **NOTES:**
 - If any item has a clothing status other than `WORN` or, in the case of clothing slots where the outfit has no clothing item, `OFF`.

@@ -12,6 +12,8 @@
 
 ## Breasts
 
+| ENUM | Scope | Type | Description | Notes |
+| :--- | :---- | :--- | :---------- | :---- |
 | `SMALL` | PC/NPCs | Breast Size | small but perky tits | |
 | `MEDIUM_SMALL` | PC/NPCs | Breast Size | pert tits | |
 | `MEDIUM_LARGE` | PC/NPCs | Breast Size | full breasts | |

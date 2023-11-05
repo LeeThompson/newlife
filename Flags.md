@@ -23,6 +23,7 @@
 | `SEE_THROUGH` | PC/NPC | Item | Marks the clothing item as "see through" | |
 | `THIN` | PC/NPC | Item | Marks the clothing item as "thin" | |
 | `LOWCUT` | PC/NPC | Item | Marks the clothing item as "lowcut" | |
+| `LACY`  | PC/NPC | Item | Marks the clothing item as "lacy" | |
 
 ## Character
 

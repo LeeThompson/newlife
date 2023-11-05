@@ -6,6 +6,20 @@ Newlife employs a number of game mechanics that are largely in the background.
 
 ## Alcohol
 
+## Clothing
+
+### Paper Doll
+
+#### PC
+
+#### NPC
+
+##### Male
+
+##### Female
+
+### Wardrobe
+
 ## Enjoyment
 
 Enjoyment is a system used to track how much a character is enjoying themselves or another's company.   It is used to develop *relationships* and as well as *stress*.
@@ -25,11 +39,15 @@ Enjoyment is a system used to track how much a character is enjoying themselves 
 
 ### Bastard
 
+### Cheating
+
 ### Knowledge
 
 ### Like
 
 ### Love
+
+### Marriage
 
 ## Skills
 
@@ -39,4 +57,3 @@ Enjoyment is a system used to track how much a character is enjoying themselves 
 
 ## Traits
 
-## Wardrobe
