@@ -51,6 +51,8 @@ Velocity also uses the above types and also uses lists (single dimension arrays)
 | `$w` | Player character or "PC" | Sometimes referred to as a "MC" (main character). |
 | `$npc` | Non-player character or "NPC" | |
 
+**NOTES:**
+- The PC is *always* female.  Depending on game options, the PC is either a transformed female or a "born female".
 
 ## Document Organization
 
@@ -80,20 +82,20 @@ Condition methods retrieve booleans, enum string values, other objects or genera
 
 | Function | Type | Scope | Mechanic/Item | Change | Parameters | Returns |
 | :------- | :--- | :---- | :------------ | :----- | :---- | :---- |
-| [addArousalTiny](#addarousaltiny-void) | Modify | PC/NPC | Arousal | Very small Increase | None  | Void |
-| [addArousalSmall](#addarousalsmall-void) | Modify | PC/NPC | Arousal | Small increase | None  | Void |
-| [addArousalMedium](#addarousalmedium-void) | Modify | PC/NPC | Arousal | Moderate increase | None  | Void |
-| [addArousalLarge](#addarousallarge-void) | Modify | PC/NPC | Arousal | Large increase | None  | Void |
-| [addArousalHuge](#addarousalhuge-void) | Modify | PC/NPC | Arousal | Very large increase | None  | Void |
+| [addArousalTiny](#addarousaltiny-void) | Modify | PC/NPC | Arousal | Very small Increase (1) | None  | Void |
+| [addArousalSmall](#addarousalsmall-void) | Modify | PC/NPC | Arousal | Small increase (2) | None  | Void |
+| [addArousalMedium](#addarousalmedium-void) | Modify | PC/NPC | Arousal | Moderate increase (4) | None  | Void |
+| [addArousalLarge](#addarousallarge-void) | Modify | PC/NPC | Arousal | Large increase (6) | None  | Void |
+| [addArousalHuge](#addarousalhuge-void) | Modify | PC/NPC | Arousal | Very large increase (10) | None  | Void |
 | [isArousalComfort](#isarousalcomfort-void) | Condition | PC/NPC | Arousal | Is arousal at or above the "comfort" threshold? | None  | Boolean |
 | [isArousalEnjoy](#isarousalenjoy-void) | Condition | PC/NPC | Arousal | Is arousal at or above the "enjoy" threshold? | None  | Boolean |
 | [isArousalClose](#isarousalclose-void) | Condition | PC/NPC | Arousal | Is arousal at or above the "close" threshold? | None  | Boolean |
 | [isArousalOrgasm](#isarousalorgasm-void) | Condition | PC/NPC | Arousal | Is arousal at or above the "orgasm" threshold? | None  | Boolean |
-| [reduceArousalTiny](#reducearousaltiny-void) | Modify | PC/NPC | Arousal | Very small decrease | None  | Void |
-| [reduceArousalSmall](#reducearousalsmall-void) | Modify | PC/NPC | Arousal | Small decrease | None  | Void |
-| [reduceArousalMedium](#reducearousalmedium-void) | Modify | PC/NPC | Arousal | Moderate decrease | None  | Void |
-| [reduceArousalLarge](#reducearousallarge-void) | Modify | PC/NPC | Arousal | Large decrease | None  | Void |
-| [reduceArousalHuge](#reducearousalhuge-void) | Modify | PC/NPC | Arousal | Very large decrease | None  | Void |
+| [reduceArousalTiny](#reducearousaltiny-void) | Modify | PC/NPC | Arousal | Very small decrease (1) | None  | Void |
+| [reduceArousalSmall](#reducearousalsmall-void) | Modify | PC/NPC | Arousal | Small decrease (2) | None  | Void |
+| [reduceArousalMedium](#reducearousalmedium-void) | Modify | PC/NPC | Arousal | Moderate decrease (4) | None  | Void |
+| [reduceArousalLarge](#reducearousallarge-void) | Modify | PC/NPC | Arousal | Large decrease (6) | None  | Void |
+| [reduceArousalHuge](#reducearousalhuge-void) | Modify | PC/NPC | Arousal | Very large decrease (10) | None  | Void |
 | [setArousalDiscomfort](#setarousaldiscomfort-void) | Modify | PC/NPC | Arousal | Sets arousal level to lowest "discomfort" level | None  | Void |
 | [setArousalComfort](#setarousalcomfort-void) | Modify | PC/NPC | Arousal | Sets arousal level to the "comfort" threshold | None  | Void |
 | [setArousalEnjoy](#setarousalenjoy-void) | Modify | PC/NPC | Arousal | Sets arousal level to the "enjoy" threshold | None  | Void |
@@ -170,6 +172,7 @@ Arousal strongly affects *willpower* tests. It's relevant in some text as well: 
 Provides a very large increase to arousal.
 
 **NOTES:**
+- The actual amount is *10*.
 - Opposite of [reduceArousalHuge](#reducearousalhuge-void).
 - Use this only if something is supposed to be exceptionally arousing or if your scene wants to summarise an extended makeout in one action.
 
@@ -178,6 +181,7 @@ Provides a very large increase to arousal.
 Provides a significant increase to arousal.
 
 **NOTES:**
+- The actual amount is *6*.
 - Opposite of [reduceArousalLarge](#reducearousallarge-void).
 - Appropriate only for things that are major turn-ons for the character.
 
@@ -186,6 +190,7 @@ Provides a significant increase to arousal.
 Provides a moderate increase to arousal. 
 
 **NOTES:**
+- The actual amount is *4*.
 - Opposite of [reduceArousalMedium](#reducearousalmedium-void).
 - Use this for very sexual actions that the character enjoys
 
@@ -194,8 +199,8 @@ Provides a moderate increase to arousal.
 Provides a small increase to the character's arousal level.
 
 **NOTES:**
+- The actual amount is *2*.
 - Opposite of [reduceArousalSmall](#reducearousalsmall-void).
-- This is twice the amount of "Tiny".
 - Use this for actions that are sexual but not massively so, such as light groping and so on.
 - You can also use it instead of Medium for sexual actions that the character doesn't especially enjoy, although if s/he *really* isn't into them then you can reduce arousal instead.
 
@@ -204,6 +209,7 @@ Provides a small increase to the character's arousal level.
 Provides a very small increase to the character's arousal level.
 
 **NOTES:**
+- The actual amount is *1*.
 - Opposite of [reduceArousalTiny](#reducearousaltiny-void).
 - Use this when something turns them on but not to a great extent, or as an additional bonus for having a relevant preference trait.
 
@@ -215,6 +221,7 @@ Provides a very small increase to the character's arousal level.
 Provides a very large decrease to arousal.
 
 **NOTES:**
+- The actual amount is *10*.
 - Opposite of [addArousalHuge](#addarousalhuge-void).
 - Use for situations that "kill the mood".
 
@@ -223,6 +230,7 @@ Provides a very large decrease to arousal.
 Provides a significant decrease to arousal.
 
 **NOTES:**
+- The actual amount is *6*.
 - Opposite of [addArousalLarge](#addarousallarge-void).
 - Use for when a character does something significantly against their partner's preference trait.
 
@@ -233,6 +241,7 @@ Provides a significant decrease to arousal.
 Provides a moderate decrease to arousal. 
 
 **NOTES:**
+- The actual amount is *4*.
 - Opposite of [addArousalMedium](#addarousalmedium-void).
 - Use when a character does something against their partner's preference trait.
 
@@ -241,6 +250,7 @@ Provides a moderate decrease to arousal.
 Provides a small increase to the character's decrease level.
 
 **NOTES:**
+- The actual amount is *2*.
 - Opposite of [addArousalSmall](#addarousalsmall-void).
 - Provides a minor reduction, suitable for when a character does something that directly opposes their partner's preference trait but not in an especially important way.
 
@@ -251,6 +261,7 @@ Provides a small increase to the character's decrease level.
 Provides a very small increase to the character's decrease level.
 
 **NOTES:**
+- The actual amount is *1*.
 - Opposite of [addArousalTiny](#addarousaltiny-void).
 - Use for especially minor arousal-reducing actions.
 
@@ -1482,7 +1493,7 @@ Often this will be combined with a larger arousal benefit. Enjoyment reduction c
 
 #### addEnjoySmall(): void
 
-#### addEnjoyMedium): void
+#### addEnjoyMedium(): void
 
 #### addEnjoyLarge(): void
 
@@ -1490,7 +1501,7 @@ Often this will be combined with a larger arousal benefit. Enjoyment reduction c
 
 #### reduceEnjoyLarge(): void
 
-#### reduceEnjoyMedium): void
+#### reduceEnjoyMedium(): void
 
 #### reduceEnjoySmall(): void
 
@@ -1502,7 +1513,7 @@ Often this will be combined with a larger arousal benefit. Enjoyment reduction c
 
 #### addWEnjoySmall(): void
 
-#### addWEnjoyMedium): void
+#### addWEnjoyMedium(): void
 
 #### addWEnjoyLarge(): void
 
@@ -1510,7 +1521,7 @@ Often this will be combined with a larger arousal benefit. Enjoyment reduction c
 
 #### reduceWEnjoyLarge(): void
 
-#### reduceWEnjoyMedium): void
+#### reduceWEnjoyMedium(): void
 
 #### reduceWEnjoySmall(): void
 
@@ -1563,7 +1574,7 @@ Smaller modifiers have a total cap across the scene-chain to stop extreme change
 
 #### addNpcLikingSmall(): void
 
-#### addNpcLikingMedium): void
+#### addNpcLikingMedium(): void
 
 #### addNpcLikingLarge(): void
 
@@ -1579,7 +1590,7 @@ Smaller modifiers have a total cap across the scene-chain to stop extreme change
 
 #### addNpcLoveSmall(): void
 
-#### addNpcLoveMedium): void
+#### addNpcLoveMedium(): void
 
 #### addNpcLoveLarge(): void
 
@@ -1595,7 +1606,7 @@ Smaller modifiers have a total cap across the scene-chain to stop extreme change
 
 #### addWLikingSmall(): void
 
-#### addWLikingMedium): void
+#### addWLikingMedium(): void
 
 #### addWLikingLarge(): void
 
@@ -1611,7 +1622,7 @@ Smaller modifiers have a total cap across the scene-chain to stop extreme change
 
 #### addWLoveSmall(): void
 
-#### addWLoveMedium): void
+#### addWLoveMedium(): void
 
 #### addWLoveLarge(): void
 
@@ -1627,7 +1638,7 @@ Smaller modifiers have a total cap across the scene-chain to stop extreme change
 
 #### reduceNpcLikingSmall(): void
 
-#### reduceNpcLikingMedium): void
+#### reduceNpcLikingMedium(): void
 
 #### reduceNpcLikingLarge(): void
 
@@ -1643,7 +1654,7 @@ Smaller modifiers have a total cap across the scene-chain to stop extreme change
 
 #### reduceNpcLoveSmall(): void
 
-#### reduceNpcLoveMedium): void
+#### reduceNpcLoveMedium(): void
 
 #### reduceNpcLoveLarge(): void
 
@@ -1659,7 +1670,7 @@ Smaller modifiers have a total cap across the scene-chain to stop extreme change
 
 #### reduceWLikingSmall(): void
 
-#### reduceWLikingMedium): void
+#### reduceWLikingMedium(): void
 
 #### reduceWLikingLarge(): void
 
@@ -1675,7 +1686,7 @@ Smaller modifiers have a total cap across the scene-chain to stop extreme change
 
 #### reduceWLoveSmall(): void
 
-#### reduceWLoveMedium): void
+#### reduceWLoveMedium(): void
 
 #### reduceWLoveLarge(): void
 
