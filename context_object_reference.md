@@ -608,6 +608,9 @@ If the character is in their thirties then `isOlderThan("THIRTIES")` will return
 
 Returns `true` if the character is completely naked.
 
+**NOTES:**
+- Also see [isNakedExceptLegwear](Context-Objects#isnakedexceptlegwear-boolean).
+
 ### isDrunk(): boolean
 
 Returns `true` if the character counts as drunk or higher.
@@ -1118,7 +1121,10 @@ Returns `true` if *any* of the PC's outfit has been disarrayed in any way.
 
 #### isNakedExceptLegwear(): boolean
 
-Returns `true` if the character is completely naked *or* if she's only wearing legwear.
+Returns `true` if the PC is completely naked *or* if she's only wearing legwear.
+
+**NOTES:**
+- Also see [isNaked](Context-Objects#isnaked-boolean).
 
 #### isOutfitCute(): boolean
 
@@ -3796,6 +3802,7 @@ Returns `true` if the "allow anal" game option has been set.
 
 **NOTES:**
 - Check this before writing any anal content.
+- Alternate Syntax: `$gd.allowAnal`
 
 
 

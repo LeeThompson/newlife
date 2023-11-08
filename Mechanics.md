@@ -8,15 +8,16 @@ Newlife employs a number of game mechanics that are largely in the background.
 
 ## Clothing
 
-### Paper Doll
+Clothing is handled by having "slots" available on the character.
 
-#### PC
+| Slot | PC | Male NPC | Female NPC |
+| :--- | :--- | :--- | :--- |
+| Upper Body | Yes | Jacket |  Yes |
+| Lower Body | Yes | Trousers | Yes |
+| Underwear Upper Body | Yes | Shirt | Yes |
+| Underwear Lower Body | Yes | No  |  Yes |
+| Legwear | Yes | No | Yes |
 
-#### NPC
-
-##### Male
-
-##### Female
 
 ### Wardrobe
 
@@ -34,6 +35,16 @@ Enjoyment is a system used to track how much a character is enjoying themselves 
 ## Housing
 
 ## Personalities
+
+## Pregnancy
+
+### Children
+
+Children in newlife exist as "babies" that are essentially always "off-screen".   They are stored as an object "attached" to the PC or a Female NPC.
+
+**NOTES:**
+- If a game is set to play for longer than the default of 52 weeks, babies will never grow up and will always be treated as infants.
+
 
 ## Relationships
 
