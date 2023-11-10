@@ -34,3 +34,12 @@
 | [reduceAlcoholMedium](Context-Objects#reducealcoholmedium-void) | Modify | PC/NPC | Alcohol | Moderate decrease | None  | Void |
 | [reduceAlcoholLarge](Context-Objects#reducealcohollarge-void) | Modify | PC/NPC | Alcohol | Significant decrease | None  | Void |
 
+
+## GameData
+
+| Function | Type | Scope | Mechanic/Item | Change | Parameters | Returns |
+| :------- | :--- | :---- | :------------ | :----- | :---- | :---- |
+| [addJobPerformanceModifier](Context-Objects#addjobperformancemodifierint-amount-void) | Modify | GameData | Employment | Adds a numeric modifier for the next time job performance is calculated.  | Integer amount | Void |
+| [addStat](Context-Objects#addstatstring-stat-void) | Modify	| GameData | Stats | Increments the stat by 1 | String `<stat>` | Void |
+
+

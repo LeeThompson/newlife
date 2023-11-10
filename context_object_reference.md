@@ -3804,5 +3804,14 @@ Returns `true` if the "allow anal" game option has been set.
 - Check this before writing any anal content.
 - Alternate Syntax: `$gd.allowAnal`
 
+**Code Examples:**
+
+```Velocity
+#if($gd.getAllowAnal())
+  Anal Sex Content
+#else
+  Alternate Content
+#end
+```
 
 
