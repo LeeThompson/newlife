@@ -79,7 +79,7 @@ Condition methods retrieve booleans, enum string values, other objects or genera
 
 
 ----
-# Functions
+# Methods
 
 ## Arousal
 
@@ -120,8 +120,9 @@ Condition methods retrieve booleans, enum string values, other objects or genera
 ----
 #  Character
 
-Character methods are available on all character objects: player, maleNPCs and femaleNPCs.
+Character methods are available on *all* character objects: playerCharacter, maleNPCs and femaleNPCs.
 
+----
 ## Actions
 
 ### Arousal modifiers
@@ -150,10 +151,10 @@ Arousal strongly affects *willpower* tests. It's relevant in some text as well: 
 
 ```Velocity
 #if(!$f.arousalEnjoy)
-  $f.addArousalSmall()##
+  $f.addArousalSmall()
 #end
 #if(!$m.arousalEnjoy)
-  $m.addArousalSmall()##
+  $m.addArousalSmall()
 #end
 ```
 
@@ -167,9 +168,7 @@ Arousal strongly affects *willpower* tests. It's relevant in some text as well: 
 #end
 ```
 
-
-
-
+----
 #### addArousalHuge(): void
 
 Provides a very large increase to arousal.
@@ -179,6 +178,7 @@ Provides a very large increase to arousal.
 - Opposite of [reduceArousalHuge](#reducearousalhuge-void).
 - Use this only if something is supposed to be exceptionally arousing or if your scene wants to summarise an extended makeout in one action.
 
+----
 #### addArousalLarge(): void
 
 Provides a significant increase to arousal.
@@ -188,6 +188,7 @@ Provides a significant increase to arousal.
 - Opposite of [reduceArousalLarge](#reducearousallarge-void).
 - Appropriate only for things that are major turn-ons for the character.
 
+----
 #### addArousalMedium(): void
 
 Provides a moderate increase to arousal. 
@@ -197,6 +198,7 @@ Provides a moderate increase to arousal.
 - Opposite of [reduceArousalMedium](#reducearousalmedium-void).
 - Use this for very sexual actions that the character enjoys
 
+----
 #### addArousalSmall(): void
 
 Provides a small increase to the character's arousal level.
@@ -207,6 +209,7 @@ Provides a small increase to the character's arousal level.
 - Use this for actions that are sexual but not massively so, such as light groping and so on.
 - You can also use it instead of Medium for sexual actions that the character doesn't especially enjoy, although if s/he *really* isn't into them then you can reduce arousal instead.
 
+----
 #### addArousalTiny(): void
 
 Provides a very small increase to the character's arousal level.
@@ -219,6 +222,7 @@ Provides a very small increase to the character's arousal level.
 **Example:**
 - A character with the `OVERACTIVE_IMAGINATION` trait could get a tiny or small arousal boost when her partner says something sexual in addition to a small boost that applies to all characters.
 
+----
 #### reduceArousalHuge(): void
 
 Provides a very large decrease to arousal.
@@ -228,6 +232,7 @@ Provides a very large decrease to arousal.
 - Opposite of [addArousalHuge](#addarousalhuge-void).
 - Use for situations that "kill the mood".
 
+----
 #### reduceArousalLarge(): void
 
 Provides a significant decrease to arousal.
@@ -239,6 +244,7 @@ Provides a significant decrease to arousal.
 
 **Example:** The PC putting a condom on a man who hates them.
 
+----
 #### reduceArousalMedium(): void
 
 Provides a moderate decrease to arousal. 
@@ -248,6 +254,7 @@ Provides a moderate decrease to arousal.
 - Opposite of [addArousalMedium](#addarousalmedium-void).
 - Use when a character does something against their partner's preference trait.
 
+----
 #### reduceArousalSmall(): void
 
 Provides a small increase to the character's decrease level.
@@ -259,6 +266,7 @@ Provides a small increase to the character's decrease level.
 
 **Example:** The PC talks about how she loves oral when her partner doesn't like it.
 
+----
 #### reduceArousalTiny(): void
 
 Provides a very small increase to the character's decrease level.
@@ -268,26 +276,32 @@ Provides a very small increase to the character's decrease level.
 - Opposite of [addArousalTiny](#addarousaltiny-void).
 - Use for especially minor arousal-reducing actions.
 
+----
 #### setArousalDiscomfort(): void
 
 Sets the character's arousal level to the lowest, "discomfort" level, regardless of what it was before.
 
+----
 #### setArousalComfort(): void
 
 Sets the character's arousal level to the "comfort" threshold, regardless of what it was before.
 
+----
 #### setArousalEnjoy(): void
 
 Sets the character's arousal level to the "enjoy" threshold, regardless of what it was before.
 
+----
 #### setArousalClose(): void
 
 Sets the character's arousal level to the "close" threshold, regardless of what it was before.
 
+----
 #### setArousalOrgasm(): void
 
 Sets the character's arousal level to the "orgasm" threshold, regardless of what it was before.
 
+----
 ### Alcohol modifiers
 
 Alcohol has a number of game effects, such as modifying *willpower* checks and a 'beer goggles' effect that adds to the attractiveness of all other characters. Your writing will sometimes need to consider drunkenness levels too.
@@ -300,14 +314,16 @@ Call the methods to increase alcohol when a character drinks booze.
 - It's rare you'll need to *reduce* alcohol. You could use this if they scene involves spending enough time without drinking for them to 'dry out'.
 - Use `clearAlcohol` for scenes that involve sleeping overnight or similar.
 
-
+----
 #### addAlcoholLarge(): void
 
 Provides a significant increase to the character's alcohol level, equivalent to a strong drink.
 
+----
 **NOTES:**
 - Opposite of [reduceAlcoholLarge](#reducealcohollarge-void).
 
+----
 #### addAlcoholMedium(): void
 
 Provides a moderate increase to the character's alcohol level.
@@ -315,6 +331,7 @@ Provides a moderate increase to the character's alcohol level.
 **NOTES:**
 - Opposite of [reduceAlcoholMedium](#reducealcoholmedium-void).
 
+----
 #### addAlcoholSmall(): void
 
 Provides a small increase to the character's alcohol level, equivalent to a weak drink.
@@ -322,6 +339,7 @@ Provides a small increase to the character's alcohol level, equivalent to a weak
 **NOTES:**
 - Opposite of [reduceAlcoholSmall](#reducealcoholsmall-void).
 
+----
 #### reduceAlcoholLarge(): void
 
 Reduces the character's alcohol level by a significant amount.
@@ -329,6 +347,7 @@ Reduces the character's alcohol level by a significant amount.
 **NOTES:**
 - Opposite of [addAlcoholLarge](#addalcohollarge-void).
 
+----
 #### reduceAlcoholMedium(): void
 
 Reduces the character's alcohol level by a moderate amount.
@@ -336,6 +355,7 @@ Reduces the character's alcohol level by a moderate amount.
 **NOTES:**
 - Opposite of [addAlcoholMedium](#addalcoholmedium-void).
 
+----
 #### reduceAlcoholSmall(): void
 
 Reduces the character's alcohol level by a small amount.
@@ -343,10 +363,12 @@ Reduces the character's alcohol level by a small amount.
 **NOTES:**
 - Opposite of [addAlcoholSmall](#addalcoholsmall-void).
 
+----
 #### clearAlcohol(): void
 
 Sets the character's alcohol level to zero.
 
+----
 ### Persistent Character Flags
 
 These methods allow you to set string or integer flags for any character. 
@@ -362,6 +384,7 @@ These are stored internally as key-value pairs where the keys are strings and th
 - Some writers have found this very limiting when writing scenes that they don't intend to have integrated into the game. These methods were added to provide a way for them to store data across scenes.
 - The main Newlife scenes do not use this functionality which means there's no chance of conflict with central game content.
 
+----
 #### addFlag(String key, String value): void
 
 Adds the specified key-value pairing to the map for this character, overriding any existing values for the key.
@@ -377,10 +400,12 @@ Adds the specified key-value pairing to the map for this character, overriding a
 #end
 ```
 
+----
 #### getFlag(String key): String
 
 Returns the value associated with this key, or `null` if no such key exists in the character's map.
 
+----
 #### setFlag(String key): void
 
 Equivalent to calling `addFlag(key,"true")`. 
@@ -388,10 +413,12 @@ Equivalent to calling `addFlag(key,"true")`.
 **NOTES:**
 - This is intended as a quicker method for writers using flags as simple yes/no checks.
 
+----
 #### removeFlag(String key): void
 
 Removes the specified key from the map.
 
+----
 #### hasFlag(String key): boolean
 
 Returns `true` if the specified key exists in the map.
@@ -406,6 +433,7 @@ Returns `true` if the specified key exists in the map.
           || $w.getTop().hasFlag("LOWCUT")   
           || $w.getTop().getTopType() == "HALTERTOP")##
 ```          
+----
 #### getInt(String key): int
 
 Returns the integer value associated with this key. 
@@ -413,10 +441,12 @@ Returns the integer value associated with this key.
 **NOTES:**
 - This method will return `0` if no integer value has been stored using the key.
 
+----
 #### setInt(String key, int value): void
 
 Stores the specified integer value using the provided key, *overwriting* any existing values.
 
+----
 #### addToInt(String key, int amount): void
 
 Increments the entry by the provided amount. 
@@ -425,16 +455,19 @@ Increments the entry by the provided amount.
 - If there was no entry for that key then a new one will be created with amount as the value.
 - To decrease an entry, use a negative number for the integer parameter.
 
+----
 ### Other Actions
 
 #### stripNaked(): void
 
 Removes all of the character's clothing.
 
+----
 #### fixClothing(): void
 
 Puts all the character's clothing back on and fixes it to a normally-worn state.
 
+----
 #### setHairstyle(String style): void
 
 Changes the character's hairstyle to the one given as a parameter. 
@@ -464,6 +497,7 @@ Changes the character's hairstyle to the one given as a parameter.
 **NOTES:**
 - The parameter must be a valid hairstyle (see the enum reference) or this method will error.
 
+----
 ### Text Getters
 
 Text getters retrieve text that's suitable to be inserted directly into output. 
@@ -476,10 +510,12 @@ Returns the character's text description as a full paragraph.
 - This is the same as is output by the 'Describe Characters' button, although for NPCs it won't include the section about the PC's relationship with them.
 - It's unlikely that you'll have cause to use this in your writing as it's simply restating what the character description outputs.
 
+----
 #### getName(): String
 
 Returns the character's name with the first letter capitalised.
 
+----
 #### getEyeColour(): String
 
 Returns the character's eye colour, lowercase with no preceding or following spaces.
@@ -492,6 +528,7 @@ Returns the character's eye colour, lowercase with no preceding or following spa
 - If both character's eyes are the same you could write "`his $m.eyeColour eyes meet yours`"
 - If the eyes are different you could write "`his $m.eyeColour eyes meet your $w.eyeColour ones`".
 
+----
 #### getHairColour(): String
 
 Returns the character's hair colour, lowercase with no preceding or following spaces. 
@@ -501,6 +538,7 @@ Returns the character's hair colour, lowercase with no preceding or following sp
 
 **Example:** `black`
 
+----
 #### getRace(): String
 
 Returns the character's race, lowercase with no preceding or following spaces. 
@@ -512,6 +550,7 @@ Returns the character's race, lowercase with no preceding or following spaces.
 **Examples:** `black`, `white`, `east asian`
 
 
+----
 #### getSkinColour(): String
 
 Returns the character's skin colour, lowercase with no preceding or following spaces. 
@@ -522,10 +561,10 @@ Returns the character's skin colour, lowercase with no preceding or following sp
 
 **Example:** `pale`
 
+----
 ## Conditions
 
-
-
+----
 ### Arousal
 
 Arousal is stored for all characters, internally, as a number. 
@@ -547,14 +586,19 @@ For writing, *arousal* should be checked against five general categories: discom
 - Orgasm will likely be refined  in the future by exposing standard methods in custom scenes. 
 - For a writer's first efforts I recommend avoiding the complex turn-based sex & makeout scenes that need to do full orgasm handling.
 
+----
 #### isArousalClose(): boolean
 
+----
 #### isArousalComfort(): boolean
 
+----
 #### isArousalEnjoy(): boolean
 
+----
 #### isArousalOrgasm(): boolean
 
+----
 ## Other methods
 
 ### getAge(): String
@@ -576,12 +620,14 @@ Returns the character's age as an enum String.
 - See the enum reference for possible values.
 - Note that these are `CAPITALISED` and *may* contain underscores so they are *not* suitable for direct insertion into text shown to the player.
 
+----
 ### getId(): String
 
 Returns the ID that this character is known as in this scene.
 
 **Examples:** `jerk`, `m`, `f`, `gf`, `bf`
 
+----
 ### isOlderThan(String age): boolean
 
 Returns `true` if the character is older than the [age](enum#age) parameter. 
@@ -604,6 +650,7 @@ Returns `true` if the character is older than the [age](enum#age) parameter.
 **Example:**
 If the character is in their thirties then `isOlderThan("THIRTIES")` will return `false` but `isOlderThan("TWENTIES")` will return `true`.
 
+----
 ### isNaked(): boolean
 
 Returns `true` if the character is completely naked.
@@ -611,6 +658,7 @@ Returns `true` if the character is completely naked.
 **NOTES:**
 - Also see [isNakedExceptLegwear](Context-Objects#isnakedexceptlegwear-boolean).
 
+----
 ### isDrunk(): boolean
 
 Returns `true` if the character counts as drunk or higher.
@@ -619,6 +667,7 @@ Returns `true` if the character counts as drunk or higher.
 - Clear headed player-characters (`CLEAR_HEAD`) *never* count as drunk. This should be used to affect descriptive text.
 - Alcohol's effect on willpower tests is handled *automatically*, you don't need to write modifiers based on it.
 
+----
 ### isVeryDrunk(): boolean
 
 Returns `true` if the character is very drunk.
@@ -626,6 +675,7 @@ Returns `true` if the character is very drunk.
 **NOTES:**
 - At this level they may need alternative paths where they slur their words, fall over, say something they shouldn't or generally make other 'boozy' mistakes.
 
+----
 ### isMaxDrunk(): boolean
 
 Returns `true` if the character has reached the maximum drunkenness level.
@@ -633,6 +683,7 @@ Returns `true` if the character has reached the maximum drunkenness level.
 **NOTES:** 
 - Newlife doesn't have characters passing out, but at this level they might need to call an end to an evening early, be helped home, or start  feeling sick. Characters who drink this much should also have a hangover the next day if your scene is one that lasts overnight.
 
+----
 ### getStrength(): int
 
 Returns an integer value representing the character's strength.
@@ -647,10 +698,12 @@ Returns an integer value representing the character's strength.
 - Bear in mind for this that strength values can vary a lot between NPCs: e.g. a `MUSCULAR` NPC has a base of `120` while a `SKINNY` one starts at `5`. 
 - Unless your random element is extremely large the stronger body-types (`TONED`, `THICKSET`, `MUSCULAR`) will have an *overwhelming advantage* over the others.
 
+----
 ### getHairstyle(): String
 
 Returns the character's hairstyle as an enum constant (see the enum reference for possible values). This can be used if you're writing content for a specific few hairstyles, e.g. if you wanted an action where someone grabs the PC by her pigtails, or where she makes fun of a bald man (but not one who shaves his head).
 
+----
 ### getHairLength(): String
 
 Returns the character's hair length.
@@ -666,6 +719,7 @@ Returns the character's hair length.
 **NOTES:**
 - Hair length is a property of hairstyles, so a character with a particular style will always have the same length.
 
+----
 ### getHasHair(): boolean
 
 Returns `true` if the character has hair.
@@ -674,6 +728,7 @@ Returns `true` if the character has hair.
 - Convenience method intended as an easier way to check if a character has hair: a fairly common check. 
 - This is the equivalent to calling `getHairLength() != "NONE"`.
 
+----
 ### getHasGrabbableHair(): boolean
 
 Returns `true` if the character has hair that can be grabbed or pulled. 
@@ -681,6 +736,7 @@ Returns `true` if the character has hair that can be grabbed or pulled.
 **NOTES:**
 - Usually `true` for shoulder-length (`SHOULDERS`) or longer hair (`LONG`).
 
+----
 ### getHairCanFallInFace(): boolean
 
 Returns `true` if the character's hair can fall into their face. 
@@ -3521,9 +3577,9 @@ In actual dialogue actions it's usually worth including dozens of lines, each wi
 
 This method will return `null` if the input list is `null` or empty. That usually won't lead to readable text, so it's often also a good idea to include some default lines or ones where their conditions guarantee at least one possibility.
 
-### Other Actions
+## Other Actions
 
-#### addFlag(String): void
+### addFlag(String): void
 
 Saves a scene flag that can be checked with `$scene.hasFlag(String)` later.
 
@@ -3533,7 +3589,8 @@ Saves a scene flag that can be checked with `$scene.hasFlag(String)` later.
 **DEVELOPER'S NOTES:**
 I will at some point write a list of flags that can be returned from the makeout and sex sub-scenes, although this is likely to be one of the later documentation tasks.
 
-#### removeFlag(String): void
+----
+### removeFlag(String): void
 
 Removes the provided scene flag. 
 
@@ -3541,7 +3598,8 @@ Removes the provided scene flag.
 - This can be any string, but the method will do nothing if it doesn't match a flag that's been set.
 - Some sub-scenes may set scene flags that are intended for use in the returning section of their parent scene and should be un-set afterwards, especially if the same sub-scene can be entered repeatedly and you want to avoid information from previous calls contaminating the response to later ones.
 
-#### clearPostSexFlags(): void
+----
+### clearPostSexFlags(): void
 
 //EDIT: This is a strange sentence //
 Removes a sex of scene flags that are mainly intended for returning actions to track what happened in a preceding sex or makeout scene.
@@ -3553,13 +3611,14 @@ Removes a sex of scene flags that are mainly intended for returning actions to t
 - This method is also called when you change active male NPC via `setActiveMaleNpc`, as long as the previous active NPC was set to a different character than the new one. This also clears a number of NPC-specific scene flags, such as `AGREED_ROUGH`.
 - The list of flags removed by this is as follows: `COME_IN_MOUTH`, `FINISHED_SEX`, `FINISHED_ANAL_SEX`, `CAME_INSIDE`, `CAME_INSIDE_ANAL`, `MO_REJECTION`, `STOPPED_SEX`, `BLOCK_REJECTIONS`, `BLOCK_REQ_STOP_ROUGH`
 
-#### setActiveMaleNpc(ContextMaleNpc): void
+----
+### setActiveMaleNpc(ContextMaleNpc): void
 
 Sets the active male NPC. 
 
 **NOTES:**
 - This can be important because it affects which NPC's attractiveness modifies the PC's arousal. Scenes with multiple NPCs may also want to restrict some NPC actions to the active NPC.
-- Changing an active male NPC will also clear certain scene-flags that are assumed to be specific to the previous guy.
+- Changing an active male NPC will also clear certain SceneFlags that are assumed to be specific to the previous guy.
 - If your scene has no male NPCs then you'll obviously never use this.
 - If your scene is a sub-scene with just a single male NPC then you usually won't need to use this as the parent should generally have set arousal from that NPC. 
 - If you need the active NPC to be populated (e.g. to use the `isRoughAgreed `method) then use `setActiveMaleNpcNoArousal` *instead* of this method. Otherwise the NPC's attractiveness modifier could end up being added twice to the PC's arousal.
@@ -3568,7 +3627,8 @@ Sets the active male NPC.
 - It is safe to call this method when the new active male NPC is the same as the current one, in that case it does nothing.
 - Also see `setActiveMaleNpcNoArousal`
 
-#### setActiveMaleNpcNoArousal(ContextMaleNpc): void
+----
+### setActiveMaleNpcNoArousal(ContextMaleNpc): void
 
 Sets the active male NPC, but does *not* change arousal values or scene flags.
 
@@ -3576,7 +3636,8 @@ Sets the active male NPC, but does *not* change arousal values or scene flags.
 - This should be used when your scene is a sub-scene and the parent will have already set arousal based on the NPC's attractiveness, but you want them to be set as active in your scene so you can use methods like `isAgreedRough` or reference them with `$activeMaleNpc`.
 - Also see `setActiveMaleNpc`
 
-#### hideNpc(ContextNpc): void
+----
+### hideNpc(ContextNpc): void
 
 Hides the NPC.
 
@@ -3590,7 +3651,8 @@ Hides the NPC.
 - You might use this if you need a 'reference' NPC who isn't present but whose stats you'll need to check. Such as if your scene involves the PC talking about her boyfriend with one of her friends then you could have the boyfriend as an NPC so you can check his stats but hide him so it won't seem like he's there.
 - If the NPC is to be hidden initially then you should call this method in the intro section.
 
-#### unHideNpc(ContextNpc): void
+----
+### unHideNpc(ContextNpc): void
 
 Stops the NPC from being hidden.
 
@@ -3599,7 +3661,8 @@ Stops the NPC from being hidden.
 - Also see `isNpcHidden`
 - Takes an NPC (of either gender) as an argument. 
 
-#### inseminateNpc(ContextMaleNpc, ContextFemaleNpc, int) : void
+----
+### inseminateNpc(ContextMaleNpc, ContextFemaleNpc, int) : void
 
 Inseminates the female NPC by the male one. 
 
@@ -3612,47 +3675,54 @@ Inseminates the female NPC by the male one.
 - Set the third parameter to zero for default situations where the male NPC cums inside the female one. 
 - set the third parameter to -10 for situations where he partially pulls out but not well enough.
 
-### Text Getters
+----
+## Text Getters
 
-#### addPossessiveSuffix(String): String
+### addPossessiveSuffix(String): String
 
 A helper method that returns the input string with a possessive suffix added. 
 
 **Examples:** `John` to `John's`; `Lewis` to `Lewis'`.
 
-#### capitalise(String): String
+----
+### capitalise(String): String
 
 Returns the input string capitalised.
 
 **NOTES:**
 - Used if you're retrieving a non-capitalised string value from a method and want to use it to start a sentence.
 
-#### getArticle(String): String
+----
+### getArticle(String): String
 
 Gets the article ("a" or "an") appropriate to the provided string.
 
-#### getFloor(): String
+----
+### getFloor(): String
 
 Returns the floor description for this scene's location.
 
 **Example:** `softly-carpeted floor`
 
-#### getWall(): String
+----
+### getWall(): String
 
 Returns the wall description in this scene's location.
 
 **Example:** `dirty alleyway wall`
 
-### Condition methods
+----
+## Condition methods
 
-#### getActiveMaleNpc(): MaleNpc
+### getActiveMaleNpc(): MaleNpc
 
 Returns the active male NPC context object. 
 
 **NOTES:**
 - Equivalent to using `$activeMaleNpc`.
 
-#### percent(int): boolean
+----
+### percent(int): boolean
 
 Makes a random check with a percentage chance of success equal to the supplied int. 
 
@@ -3660,7 +3730,8 @@ Makes a random check with a percentage chance of success equal to the supplied i
 - Values of zero or less will *always* return `false`
 - Values of 100 or greater will *always* return `true`
 
-#### randomNumber(int limit): int
+----
+### randomNumber(int limit): int
 
 Returns a random number from 0 to limit-1. 
 
@@ -3669,32 +3740,37 @@ Returns a random number from 0 to limit-1.
 
 **Example:** `randomNumber(3) `will return either 0, 1 or 2. 
 
-#### randomBoolean: boolean
+----
+### randomBoolean: boolean
 
 Returns either true or false, at random.
 
-#### hasFlag(String): boolean
+----
+### hasFlag(String): boolean
 
-Returns `true` if the scene-flag represented by the parameter has been set, either via the `$scene.addFlag` method in a custom scene or by a sub-scene. 
+Returns `true` if the SceneFlag represented by the parameter has been set, either via the `$scene.addFlag` method in a custom scene or by a sub-scene. 
 
 **NOTES:**
 - Scene flags are not an enum and can be any string.
 
-#### getHasBed(): boolean
+----
+### getHasBed(): boolean
 
 Returns `true` if this scene's location has a bed. 
 
 **NOTES:**
 - Transitions to the lying makeout should only happen in locations with beds.
 
-#### isOutside(): boolean
+----
+### isOutside(): boolean
 
 Returns `true` if this scene's location counts as being outside. 
 
 **NOTES:**
 - The main effect of this is to use "ground" instead of "floor".
 
-#### isNpcHidden(ContextNpc): boolean
+----
+### isNpcHidden(ContextNpc): boolean
 
 Returns `true` if the NPC referenced is hidden.
 
@@ -3703,8 +3779,8 @@ Returns `true` if the NPC referenced is hidden.
 - Also see `unHideNpc`
 - Takes an NPC (of either gender) as an argument. 
 
-
-#### isRoughAgreed(): boolean
+----
+### isRoughAgreed(): boolean
 
 Returns `true` if rough-mode has been agreed with the current active male NPC.
 
@@ -3715,7 +3791,8 @@ Returns `true` if rough-mode has been agreed with the current active male NPC.
 - This method does *not* check the `BLOCK_ROUGH` trait. It's assumed that these characters will not be able to access a situation where the `AGREED_ROUGH` flag or always-rough relationship status will be set.
 - If your scene is setting `AGREED_ROUGH` or the always-rough relationship status then you should *first* check for the `BLOCK_ROUGH` trait before doing so.
 
-#### isNpcRough(boolean allowBehaviourFaking): boolean
+----
+### isNpcRough(boolean allowBehaviourFaking): boolean
 
 Returns `true` if the active male NPC is allowed to take rough actions.
 
@@ -3732,9 +3809,10 @@ Returns `true` if the active male NPC is allowed to take rough actions.
 **REMINDER:**
 These methods use the context id `gd`.  
 
+----
 ## Actions
 
-#### addJobPerformanceModifier(int amount): void
+### addJobPerformanceModifier(int amount): void
 
 Adds a numeric modifier for the next time job performance is calculated. 
 
@@ -3750,31 +3828,36 @@ Adds a numeric modifier for the next time job performance is calculated.
 $gd.addJobPerformanceModifier(5)
 ```
 
-#### addStat(String stat): void
+----
+### addStat(String stat): void
 
 Increases the specified Stat by 1.
 
 **NOTES:**
 - The parameter *must* be a valid Stat.
+- Also see [addStat](Context-Objects#addstatstring-stat-int-amount-void)
 
 **Code Examples:**
 ```Velocity
 $gd.addStat("BEATINGS_GIVEN")
 ```
 
-#### addStat(String stat, int amount): void
+----
+### addStat(String stat, int amount): void
 
 Increases the specified Stat by the specified *amount*.
 
 **NOTES:**
 - The parameter *must* be a valid Stat.
+- Also see [addStat](Context-Objects#addstatstring-stat-void)
 
 **Code Examples:**
 ```Velocity
 $gd.addStat("BEATINGS_GIVEN", 4)
 ```
 
-#### setStat(String stat, int amount): void
+----
+### setStat(String stat, int amount): void
 
 Sets specified Stat to specified *amount*.
 
@@ -3786,8 +3869,9 @@ Sets specified Stat to specified *amount*.
 ```Velocity
 $gd.setStat("COMPELLED_HYPNOSIS_SESSION",$weeksBeforeRepeat)
 ```
- 
-#### removeGameFlag(String): void
+
+---- 
+### removeGameFlag(String): void
 
 Removes the supplied GameFlag.
 
@@ -3799,7 +3883,8 @@ Removes the supplied GameFlag.
 $gd.removeGameFlag("HIRED_HYPNOTIST")
 ```
 
-#### setGameFlag(String): void
+----
+### setGameFlag(String): void
 
 Sets the GameFlag that matches the parameter. 
 
@@ -3816,9 +3901,10 @@ GameFlags are used to convey information across scene chains.
 For instance, if you need to flag that your scene has happened so you can vary its text on repeats. 
 You can use the `TEST_FLAG` in testing, but make sure to let me know what new flag is needed and how it's to be used when you submit the scene.
 
-### Text Getters
+----
+## Text Getters
 
-#### getJobTitle(): String
+### getJobTitle(): String
 
 Return's the PC's job title. 
 
@@ -3828,10 +3914,10 @@ Return's the PC's job title.
 ```Velocity
 $w.getName() returned home after another day of being a $gd.getJobTitle().
 ```
+----
+## Condition methods
 
-### Condition methods
-
-#### getStat(String stat): int
+### getStat(String stat): int
 
 Returns the integer value of the Stat. 
 
@@ -3847,8 +3933,8 @@ Returns the integer value of the Stat.
   $w.getName() has been lucky so far!
 #end
 ```
-
-#### hasGameFlag(String flag): boolean
+----
+### hasGameFlag(String flag): boolean
 
 Returns `true` if the GameFlag is set.
 
@@ -3863,8 +3949,8 @@ Returns `true` if the GameFlag is set.
   $w.getName() has not seen the hypnotist flyer.
 #end
 ```
-
-#### getAllowAnal(): boolean
+----
+### getAllowAnal(): boolean
 
 Returns `true` if the "allow anal" game option has been set.
 
