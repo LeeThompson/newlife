@@ -3732,8 +3732,6 @@ Returns `true` if the active male NPC is allowed to take rough actions.
 **REMINDER:**
 These methods use the context id `gd`.  
 
-*For example:* `$gd.addJobPerformanceModifier(5)`
-
 ## Actions
 
 #### addJobPerformanceModifier(int amount): void
@@ -3747,34 +3745,74 @@ Adds a numeric modifier for the next time job performance is calculated.
 - This method should typically be used if the PC does something that affects how she does at work that week – it's most commonly used in workplace events.
 - Job performance is not strictly capped in either direction (it can be negative), but it's commonly in the 0-100 range based on work skills with modifiers for stress, traits and so on.
 
+**Code Examples:**
+```Velocity
+$gd.addJobPerformanceModifier(5)
+```
+
 #### addStat(String stat): void
 
-Increases the Stat by 1.
+Increases the specified Stat by 1.
+
+**NOTES:**
+- The parameter *must* be a valid Stat.
+
+**Code Examples:**
+```Velocity
+$gd.addStat("BEATINGS_GIVEN")
+```
 
 #### addStat(String stat, int amount): void
 
-Increases the stat represented by the stat parameter by the amount of the second parameter.
+Increases the specified Stat by the specified *amount*.
+
+**NOTES:**
+- The parameter *must* be a valid Stat.
+
+**Code Examples:**
+```Velocity
+$gd.addStat("BEATINGS_GIVEN", 4)
+```
 
 #### setStat(String stat, int amount): void
 
-Sets the stat to the amount provided, regardless of what its previous value was. 
+Sets specified Stat to specified *amount*.
 
 **NOTES:**
-Equivalent to calling `addStat(stat,(getStat(stat)*-1)+amount)`.
+- The parameter *must* be a valid Stat.
+- Equivalent to calling `addStat(stat,(getStat(stat)*-1)+amount)`.
 
+**Code Examples:**
+```Velocity
+$gd.setStat("COMPELLED_HYPNOSIS_SESSION",$weeksBeforeRepeat)
+```
+ 
 #### removeGameFlag(String): void
 
-Un-sets the supplied GameFlag.
+Removes the supplied GameFlag.
+
+**NOTES:**
+- The parameter *must* be a valid GameFlag.
+
+**Code Examples:**
+```Velocity
+$gd.removeGameFlag("HIRED_HYPNOTIST")
+```
 
 #### setGameFlag(String): void
 
 Sets the GameFlag that matches the parameter. 
 
 **NOTES:**
-- An error will be thrown if the parameter isn't a valid value.
+- The parameter *must* be a valid GameFlag.
+
+**Code Examples:**
+```Velocity
+$gd.setGameFlag("HIRED_HYPNOTIST")
+```
 
 **DEVELOPER'S NOTES:**
-Game-flags are used to convey information across scene chains.
+GameFlags are used to convey information across scene chains.
 For instance, if you need to flag that your scene has happened so you can vary its text on repeats. 
 You can use the `TEST_FLAG` in testing, but make sure to let me know what new flag is needed and how it's to be used when you submit the scene.
 
@@ -3786,15 +3824,45 @@ Return's the PC's job title.
 
 **Example:** `trainee saleswoman`
 
+**Code Examples:**
+```Velocity
+$w.getName() returned home after another day of being a $gd.getJobTitle().
+```
+
 ### Condition methods
 
 #### getStat(String stat): int
 
-Returns the integer value of the stat. The parameter *must* be a valid stat.
+Returns the integer value of the Stat. 
+
+**NOTES:**
+- The parameter *must* be a valid Stat.
+
+**Code Examples:**
+```Velocity
+#set($temp = $gd.getStat("TIMES_MUGGED"))
+#if($temp > 0)
+  $w.getName() has been mugged $temp times.
+#else
+  $w.getName() has been lucky so far!
+#end
+```
 
 #### hasGameFlag(String flag): boolean
 
-Returns `true` if the submitted gameflag is set. The parameter *must* be a valid GameFlag.
+Returns `true` if the GameFlag is set.
+
+**NOTES:**
+- The parameter *must* be a valid GameFlag.
+
+**Code Examples:**
+```Velocity
+#if($hasGameFlag("CAN_HIRE_HYPNOTISTS))
+  $w.getName() has seen the hypnotist flyer.
+#else
+  $w.getName() has not seen the hypnotist flyer.
+#end
+```
 
 #### getAllowAnal(): boolean
 
@@ -3805,7 +3873,6 @@ Returns `true` if the "allow anal" game option has been set.
 - Alternate Syntax: `$gd.allowAnal`
 
 **Code Examples:**
-
 ```Velocity
 #if($gd.getAllowAnal())
   Anal Sex Content
