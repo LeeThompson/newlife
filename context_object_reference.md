@@ -392,11 +392,11 @@ Adds the specified key-value pairing to the map for this character, overriding a
 **Code Example:**
 
 ```Velocity
-#if($scene.percent(75))##
-	She agrees to that.
-	$scene.addFlag("SOPHISTICATED_SALES_NO_SEX")##
+#if($scene.percent(75))
+   She agrees to that.
+   $scene.addFlag("SOPHISTICATED_SALES_NO_SEX")
 #else
-	But she tells you she can't make any promises.
+   But she tells you she can't make any promises.
 #end
 ```
 
@@ -655,8 +655,8 @@ If the character is in their thirties then `isOlderThan("THIRTIES")` will return
 
 Returns `true` if the character is completely naked.
 
-**NOTES:**
-- Also see [isNakedExceptLegwear](Context-Objects#isnakedexceptlegwear-boolean).
+**RELATED METHODS:**
+- [isNakedExceptLegwear](Context-Objects#isnakedexceptlegwear-boolean).
 
 ----
 ### isDrunk(): boolean
@@ -1179,8 +1179,9 @@ Returns `true` if *any* of the PC's outfit has been disarrayed in any way.
 
 Returns `true` if the PC is completely naked *or* if she's only wearing legwear.
 
-**NOTES:**
-- Also see [isNaked](Context-Objects#isnaked-boolean).
+**RELATED METHODS:**
+- [isNaked](Context-Objects#isnaked-boolean)
+
 
 #### isOutfitCute(): boolean
 
@@ -1797,17 +1798,20 @@ Adds the specified trait to the NPC.
 Adds a relationship flag to the NPC. 
 
 **NOTES:**
-- Also see `removeRelationshipFlag`
-- This has considerable overlap with NPC traits, as is discussed in the `hasRelationshipFlag` method description.
+- This has considerable overlap with NPC traits, as is discussed in the [hasRelationshipFlag](Context-Objects#hasrelationshipflagstring-boolean) method description.
 - You can add a relationship flag to represent some persistent change in the characters' relationship: use the testing flag as a placeholder and make sure to include a comment with the actual value you want this to be replaced with when your scene is integrated in the game.
 - Relationship flags do *not* appear in the character browser. For that you need to use an NPC trait.
+
+**RELATED METHODS:**
+- [hasRelationshipFlag](Context-Objects#hasrelationshipflagstring-boolean)
+- [removeRelationshipFlag](Context-Objects#removerelationshipflagstring-flag-void)
 
 #### addSexualActivity(String activity, boolean canCountAsCheating): void
 
 Sets the specified sexual activity as having taken place, which may count as cheating if the boolean parameter is set to `true`.  See the enum reference for a list of SexualActivity values and when they should be set.
 
 **NOTES:**
-- If your scene is a sub-scene then you should check for the scene flag `NOT_CHEATING` (case sensitive). This can also be set before calling transition to a makeout or other existing Newlife scene, and will stop it from counting any sexual content as being cheating. This should be done if the PC's actions are with the knowledge & consent of her partner.
+- If your scene is a sub-scene then you should check for the SceneFlag `NOT_CHEATING` (case sensitive). This can also be set before calling transition to a makeout or other existing Newlife scene, and will stop it from counting any sexual content as being cheating. This should be done if the PC's actions are with the knowledge & consent of her partner.
 - Additionally, it shouldn't count as cheating if something happens that the PC hasn't welcomed or initiated – for example if a guy just walks up and grabs her tits. However, if she's been flirting with him first then it should anger her SO and therefore should count as cheating.
 - This method should be called when the PC engages in any relevant SexualActivity with an NPC.
 - Currently `ANAL` is *not* a valid call for female NPCs, and will cause an error if used as the activity parameter with them.  
@@ -1841,34 +1845,47 @@ As such, the general rule is *one* orgasm per male NPC per scene chain. Exceptio
 If the PC is involved consider the `haveOrgasmFromPc` method which does the same as this one but also adds *enjoyment* based on their *attraction* to the PC.
 
 
+----
 #### haveOrgasmFromPc(): void
 
 Like the `haveOrgasm` method in the NPC superclass but also gives the NPC a boost in *enjoyment* based on their *attraction* to the PC.
 
+----
 #### informVirgin(): void
 
 Informs the NPC that the PC is a virgin. 
 
 **NOTES:**
-- Also see `informNotVirgin`
 - This should only be called if she actually is one.
 
+**RELATED METHODS:**
+- [informNotVirgin](Context-Objects#informnotvirgin-void)
+
+----
 #### informNotVirgin(): void
 
 Informs the NPC that the PC is not a virgin.
 
 **NOTES:**
-- Also see `informVirgin`
 - Should not be called if she is, although NPCs do start off assuming the PC isn't one.
 
+**RELATED METHODS:**
+- [informVirgin](Context-Objects#informvirgin-void)
+
+----
 #### removeRelationshipFlag(String flag): void
 
 Removes the specified relationship flag.
 
 **NOTES:**
-- Also see `addRelationshipFlag`
 - If the flag is not set, this method will have no effect.
 - If the flag is not set and this is called will *not* throw an error, so you don't need to first check that the flag is set before calling this.
+
+
+**RELATED METHODS:**
+- [addRelationshipFlag](Context-Objects#addrelationshipflagstring-flag-void)
+- [hasRelationshipFlag](Context-Objects#hasrelationshipflagstring-boolean)
+
 
 #### breakup(boolean npcDecision): void
 
@@ -2995,7 +3012,7 @@ Typically, an NPC should get two chances for sabotage (assuming he puts on the c
 First when he puts it on via `wearCondomWithSabotageChance` and then a second time when sex begins. 
 
 If you're writing a vaginal sex scene (very much not recommended for new writers or indeed for anyone until further methods are exposed for custom scenes!) then you should call this in your scene's intro.
-In sex scene intros, you'd typically check for the relevant scene flag `INHIBIT_SABOTAGE`.
+In sex scene intros, you'd typically check for the relevant SceneFlag `INHIBIT_SABOTAGE`.
 
 
 #### inseminatePlayer(int modifier, boolean canCountAsCheating): void
@@ -3005,7 +3022,7 @@ Inseminates the player, which may get her pregnant at the end-of-week pregnancy 
 **NOTES:**
 - The int parameter is an integer modifier to her fertility chance for this specific insemination. For normal sex this should be 0. For less risky situations such as him finishing outside but some of his stuff getting in a dangerous place use a -5 or -10 modifier.
 - The boolean parameter controls whether this insemination should be considered cheating if the PC is in a relationship.  It should be set to `false` in situations where the PC is with another man *with her partner's approval*.
-- For general sex scenes the boolean should be set based on whether the `NOT_CHEATING` scene flag is set. See the enum reference document for information about scene flags.
+- For general sex scenes the boolean should be set based on whether the `NOT_CHEATING` SceneFlag is set. See the enum reference document for information about SceneFlags.
 - You don't need to check against fertility, contraception, existing pregnancies etc as the pregnancy calculations will do that for you: just call this method whenever he finishes inside her.
 - If the PC gets inseminated multiple times in one scene, just make a separate `inseminatePlayer` call each time.
 - Call this whenever a situation is unsafe for the player. 
@@ -3553,7 +3570,6 @@ Instead you need to define a List in your Velocity text and submit it as the par
 
 
 **Coding Example:**
-
 The most common use of this is to populate a list (such as different dialogue lines) based on conditions. 
 
 To do this you'll want to build the list up step-by-step:
@@ -3581,35 +3597,52 @@ This method will return `null` if the input list is `null` or empty. That usuall
 
 ### addFlag(String): void
 
-Saves a scene flag that can be checked with `$scene.hasFlag(String)` later.
+Adds a SceneFlag.
 
 **NOTES:**
-- Scene flags persist across scenes within a scene chain this is the main way of passing information to sub-scenes. Scene flags are *not* an enum value so any string can be used. 
+- Scene flags persist across scenes within a scene chain this is the main way of passing information to sub-scenes. 
+- Scene flags are *not* an enum value so any string can be used. 
 
+**RELATED METHODS:**
+- [hasFlag](Context-Objects#hasflagstring-boolean-1)
+- [removeFlag](Context-Objects#removeflagstring-void)
+
+**Code Examples:**
+```Velocity
+$scene.addFlag("COOKING_CLASS_REJECTED")
+```
 **DEVELOPER'S NOTES:**
 I will at some point write a list of flags that can be returned from the makeout and sex sub-scenes, although this is likely to be one of the later documentation tasks.
 
 ----
 ### removeFlag(String): void
 
-Removes the provided scene flag. 
+Removes the provided SceneFlag. 
 
 **NOTES:**
 - This can be any string, but the method will do nothing if it doesn't match a flag that's been set.
-- Some sub-scenes may set scene flags that are intended for use in the returning section of their parent scene and should be un-set afterwards, especially if the same sub-scene can be entered repeatedly and you want to avoid information from previous calls contaminating the response to later ones.
+- Some sub-scenes may set SceneFlags that are intended for use in the returning section of their parent scene and should be un-set afterwards, especially if the same sub-scene can be entered repeatedly and you want to avoid information from previous calls contaminating the response to later ones.
+
+**RELATED METHODS:**
+- [addFlag](Context-Objects#addflagstring-void)
+- [hasFlag](Context-Objects#hasflagstring-boolean-1)
 
 ----
 ### clearPostSexFlags(): void
 
-//EDIT: This is a strange sentence //
-Removes a sex of scene flags that are mainly intended for returning actions to track what happened in a preceding sex or makeout scene.
+Removes a series of post-sex SceneFlags that are primarily intended for returning actions to track what happened in a preceding sex or makeout scene.
 
 **NOTES:**
 - This is important if your scene can launch multiple makeout transitions, or if it transitions to another scene which can. 
 - Usually these flags would be cleared at the end of the transition's text section in the `.vm`.
 - This usually can't be called in an effects section in the YAML, because this would remove the flags before the text is processed and prevent them from being used to modify it.
-- This method is also called when you change active male NPC via `setActiveMaleNpc`, as long as the previous active NPC was set to a different character than the new one. This also clears a number of NPC-specific scene flags, such as `AGREED_ROUGH`.
+- This method is also called when you change active male NPC via [setActiveMaleNpc](Context-Objects#setactivemalenpccontextmalenpc-void), as long as the previous active NPC was set to a different character than the new one. This also clears a number of NPC-specific SceneFlags, such as `AGREED_ROUGH`.
 - The list of flags removed by this is as follows: `COME_IN_MOUTH`, `FINISHED_SEX`, `FINISHED_ANAL_SEX`, `CAME_INSIDE`, `CAME_INSIDE_ANAL`, `MO_REJECTION`, `STOPPED_SEX`, `BLOCK_REJECTIONS`, `BLOCK_REQ_STOP_ROUGH`
+
+**Code Examples:**
+```Velocity
+$scene.clearPostSexFlags()
+```
 
 ----
 ### setActiveMaleNpc(ContextMaleNpc): void
@@ -3621,20 +3654,20 @@ Sets the active male NPC.
 - Changing an active male NPC will also clear certain SceneFlags that are assumed to be specific to the previous guy.
 - If your scene has no male NPCs then you'll obviously never use this.
 - If your scene is a sub-scene with just a single male NPC then you usually won't need to use this as the parent should generally have set arousal from that NPC. 
-- If you need the active NPC to be populated (e.g. to use the `isRoughAgreed `method) then use `setActiveMaleNpcNoArousal` *instead* of this method. Otherwise the NPC's attractiveness modifier could end up being added twice to the PC's arousal.
+- If you need the active NPC to be populated (e.g. to use the [isRoughAgreed](Context-Objects#isroughagreed-boolean) method) then use [setActiveMaleNpcNoArousal](Context-Objects#setactivemalenpcnoarousalcontextmalenpc-void) *instead* of this method. Otherwise the NPC's attractiveness modifier could end up being added twice to the PC's arousal.
 - If your scene is a starting scene with single male NPC then you should set that NPC as active in the intro.
 - If your scene has multiple male NPCs then you should set the one who's primarily interacting with the PC as active. This may change over the course of the scene and you may not have an active npc at the start.
 - It is safe to call this method when the new active male NPC is the same as the current one, in that case it does nothing.
-- Also see `setActiveMaleNpcNoArousal`
+- Also see [setActiveMaleNpcNoArousal](Context-Objects#setactivemalenpcnoarousalcontextmalenpc-void)
 
 ----
 ### setActiveMaleNpcNoArousal(ContextMaleNpc): void
 
-Sets the active male NPC, but does *not* change arousal values or scene flags.
+Sets the active male NPC, but does *not* change arousal values or SceneFlags.
 
 **NOTES:**
 - This should be used when your scene is a sub-scene and the parent will have already set arousal based on the NPC's attractiveness, but you want them to be set as active in your scene so you can use methods like `isAgreedRough` or reference them with `$activeMaleNpc`.
-- Also see `setActiveMaleNpc`
+- Also see [setActiveMaleNpc](Context-Objects#setactivemalenpccontextmalenpc-void)
 
 ----
 ### hideNpc(ContextNpc): void
@@ -3642,8 +3675,6 @@ Sets the active male NPC, but does *not* change arousal values or scene flags.
 Hides the NPC.
 
 **NOTES:**
-- Also see `unHideNpc`
-- Also see `isNpcHidden`
 - Takes an NPC (of either gender) as an argument. 
 - Any hidden NPC will *not* appear if the player clicks the *Describe Characters* button.
 - You might use this if an NPC is needed in a scene but isn't present initially. In this case you can have them present but hidden and un-hide them when they show up.
@@ -3651,15 +3682,21 @@ Hides the NPC.
 - You might use this if you need a 'reference' NPC who isn't present but whose stats you'll need to check. Such as if your scene involves the PC talking about her boyfriend with one of her friends then you could have the boyfriend as an NPC so you can check his stats but hide him so it won't seem like he's there.
 - If the NPC is to be hidden initially then you should call this method in the intro section.
 
+**RELATED METHODS:**
+- [isNpcHidden](Context-Objects#isnpchiddencontextnpc-boolean)
+- [unHideNpc](Context-Objects#unhidenpccontextnpc-void)
+
 ----
 ### unHideNpc(ContextNpc): void
 
 Stops the NPC from being hidden.
 
 **NOTES:**
-- Also see `hideNpc`
-- Also see `isNpcHidden`
 - Takes an NPC (of either gender) as an argument. 
+
+**RELATED METHODS:**
+- [hideNpc](Context-Objects#hidenpccontextnpc-void)
+- [isNpcHidden](Context-Objects#isnpchiddencontextnpc-boolean)
 
 ----
 ### inseminateNpc(ContextMaleNpc, ContextFemaleNpc, int) : void
@@ -3720,38 +3757,81 @@ Returns the active male NPC context object.
 
 **NOTES:**
 - Equivalent to using `$activeMaleNpc`.
+- Also see [setActiveMaleNpc](Context-Objects#setactivemalenpccontextmalenpc-void)
+- Also see [setActiveMaleNpcNoArousal](Context-Objects#setactivemalenpcnoarousalcontextmalenpc-void)
 
 ----
-### percent(int): boolean
+### percent(int chance): boolean
 
-Makes a random check with a percentage chance of success equal to the supplied int. 
+Makes a random check with a percentage chance of success equal to the supplied integer. 
 
 **NOTES:**
 - Values of zero or less will *always* return `false`
 - Values of 100 or greater will *always* return `true`
 
+**Code Examples:**
+```Velocity
+#set($moreGroping = $scene.percent(30))##
+```
+
+```Velocity
+#if($activeMaleNpc.hasTrait("SLEAZY") && $activeMaleNpc.isNpcAttractionAttracted() && $scene.percent(66))
+  #set($inappropriatePartner = true)
+#elseif(!$activeMaleNpc.partner && !$activeMaleNpc.hadSex && !$activeMaleNpc.hadAnalSex && $activeMaleNpc.wAttractionAttracted && $activeMaleNpc.npcAttractionAttracted)
+  #set($spark = true)
+#else
+  #set($normalCooking = true)
+#end
+```
+
 ----
 ### randomNumber(int limit): int
 
-Returns a random number from 0 to limit-1. 
+Returns a random number between 0 and limit. 
 
 **NOTES:**
 - This will error if limit is 0 or negative.
+- Because the random number starts at 0, the highest value returned will be the limit minus one.
 
 **Example:** `randomNumber(3) `will return either 0, 1 or 2. 
 
+**Code Examples:**
+```Velocity
+#set($choice = $scene.randomNumber(4))##
+```
+
 ----
-### randomBoolean: boolean
+### randomBoolean(): boolean
 
 Returns either true or false, at random.
+
+**Code Examples:**
+```Velocity
+#if($scene.randomBoolean())
+  Partway through your hands touch while stirring a pot of sauce. The simple contact sense a sudden jolt through you and, judging from how $activeMaleNpc.name draws in his breath you think he's felt it too.
+#else
+  You cook together, but your eyes keep getting drawn to your partners. His to yours as well. You really should be paying more attention to the food but for some reason you just can't focus.
+#end
+```
 
 ----
 ### hasFlag(String): boolean
 
-Returns `true` if the SceneFlag represented by the parameter has been set, either via the `$scene.addFlag` method in a custom scene or by a sub-scene. 
+Returns `true` if the SceneFlag represented by the parameter has been set, either via the [addFlag](Context-Objects#addflagstring-void) method in a custom scene or by a sub-scene. 
 
 **NOTES:**
-- Scene flags are not an enum and can be any string.
+- Scene flags are not an ENUM and can be any string.
+
+**RELATED METHODS:**
+- [addFlag](Context-Objects#addflagstring-void)
+- [removeFlag](Context-Objects#removeflagstring-void)
+
+**Code Examples:**
+```Velocity
+#if($scene.hasFlag("COOKING_CLASS_HAD_FUN")) You had fun, but it's probably enough fun for one day, so you bid your partner goodnight. You then leave the class, picking up a new recipe to bring in next time, and head home alone.##
+#else You leave the class, picking up a new recipe to bring in next time, and head home alone.
+#end##
+```
 
 ----
 ### getHasBed(): boolean
@@ -3761,6 +3841,11 @@ Returns `true` if this scene's location has a bed.
 **NOTES:**
 - Transitions to the lying makeout should only happen in locations with beds.
 
+**Code Examples:**
+```Velocity
+#if($scene.hasBed)$scene.addWeightedItem("MISSIONARY",1)$scene.addWeightedItem("DOGGY",1)#end
+```
+
 ----
 ### isOutside(): boolean
 
@@ -3769,15 +3854,31 @@ Returns `true` if this scene's location counts as being outside.
 **NOTES:**
 - The main effect of this is to use "ground" instead of "floor".
 
+**Code Examples:**
+```Velocity
+#if(!$scene.isOutside())$scene.addWeightedItem("SOFA_SEX",1)#end
+```
+
 ----
 ### isNpcHidden(ContextNpc): boolean
 
 Returns `true` if the NPC referenced is hidden.
 
 **NOTES:**
-- Also see `hideNpc`
-- Also see `unHideNpc`
 - Takes an NPC (of either gender) as an argument. 
+
+**RELATED METHODS:**
+- [hideNpc](Context-Objects#hidenpccontextnpc-void)
+- [unHideNpc](Context-Objects#unhidenpccontextnpc-void)
+
+**Code Examples:**
+```Velocity
+#if($scene.isNpcHidden($m))
+You're in town with a local sleazebag and no bra.
+#else
+You're out in town, bra-free.
+#end
+```
 
 ----
 ### isRoughAgreed(): boolean
@@ -3786,10 +3887,13 @@ Returns `true` if rough-mode has been agreed with the current active male NPC.
 
 **NOTES:**
 - An error will be thrown error if an active male NPC has *not* been set.
-- Rough-mode counts as being set if the scene flag "`AGREED_ROUGH`" is set or if the relationship is flagged as always being rough. 
-- The scene flag gets cleared whenever the active male NPC is changed.
+- Rough-mode counts as being set if the SceneFlag `AGREED_ROUGH` is set or if the relationship is flagged as always being rough. 
+- The SceneFlag gets cleared whenever the active male NPC is changed.
 - This method does *not* check the `BLOCK_ROUGH` trait. It's assumed that these characters will not be able to access a situation where the `AGREED_ROUGH` flag or always-rough relationship status will be set.
 - If your scene is setting `AGREED_ROUGH` or the always-rough relationship status then you should *first* check for the `BLOCK_ROUGH` trait before doing so.
+
+**RELATED METHODS:**
+- [isNpcRough](Context-Objects#isnpcroughboolean-allowbehaviourfaking-boolean)
 
 ----
 ### isNpcRough(boolean allowBehaviourFaking): boolean
@@ -3798,10 +3902,18 @@ Returns `true` if the active male NPC is allowed to take rough actions.
 
 **NOTES:**
 - An error will be thrown error if an active male NPC has *not* been set.
-- This will return `true` if rough-mode has been agreed in which case `isRoughAgreed` will *also* return `true`. 
+- This will return `true` if rough-mode has been agreed in which case [isRoughAgreed](Context-Objects#isroughagreed-boolean) will *also* return `true`. 
 - This method can return `true` if the NPC is allowed to take rough actions *without* the approval of the PC.
 - This checks his behaviour and also whether the PC has the `BLOCK_ROUGH` trait.
 - When gating rough NPC actions behind this boolean, it will often be useful to write PC-reactions for both situations: where she's agreed to be treated roughly, and when she hasn't. In the latter case consider text for `LIKES_ROUGH` (where she enjoys it) and `LOW_SELF_ESTEEM` (where she accepts it as her due) as well as a default section where she's annoyed or angry.
+
+**RELATED METHODS:**
+- [isRoughAgreed](Context-Objects#isroughagreed-boolean)
+
+**Code Examples:**
+```Velocity
+TO DO: Code Example for isNpcRough
+```
 
 ----
 # GameData methods
