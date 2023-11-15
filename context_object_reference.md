@@ -389,43 +389,89 @@ These are stored internally as key-value pairs where the keys are strings and th
 
 Adds the specified key-value pairing to the map for this character, overriding any existing values for the key.
 
+**RELATED METHODS:**
+- [getFlag](Context-Objects#getflagstring-key-string)
+- [setFlag](Context-Objects#setflagstring-key-void)
+- [removeFlag](Context-Objects#removeflagstring-key-void)
+- [hasFlag](Context-Objects#hasflagstring-key-boolean)
+- [getInt](Context-Objects#getintstring-key-int)
+- [setInt](Context-Objects#setintstring-key-int-value-void)
+- [addToInt](Context-Objects#addtointstring-key-int-amount-void)
+
 **Code Example:**
 
 ```Velocity
 #if($scene.percent(75))
    She agrees to that.
-   $scene.addFlag("SOPHISTICATED_SALES_NO_SEX")
+   $w.addFlag("SOPHISTICATED_SALES_NO_SEX")
 #else
    But she tells you she can't make any promises.
 #end
 ```
+
 
 ----
 #### getFlag(String key): String
 
 Returns the value associated with this key, or `null` if no such key exists in the character's map.
 
+**RELATED METHODS:**
+- [addFlag](Context-Objects#addflagstring-key-string-value-void)
+- [setFlag](Context-Objects#setflagstring-key-void)
+- [removeFlag](Context-Objects#removeflagstring-key-void)
+- [hasFlag](Context-Objects#hasflagstring-key-boolean)
+- [getInt](Context-Objects#getintstring-key-int)
+- [setInt](Context-Objects#setintstring-key-int-value-void)
+- [addToInt](Context-Objects#addtointstring-key-int-amount-void)
+
 ----
 #### setFlag(String key): void
 
-Equivalent to calling `addFlag(key,"true")`. 
+Adds the specified key pairing to the map for this character and sets the value to `true`.
 
 **NOTES:**
 - This is intended as a quicker method for writers using flags as simple yes/no checks.
+- Equivalent to calling `addFlag(key,"true")`. 
+
+**RELATED METHODS:**
+- [addFlag](Context-Objects#addflagstring-key-string-value-void)
+- [getFlag](Context-Objects#getflagstring-key-string)
+- [removeFlag](Context-Objects#removeflagstring-key-void)
+- [hasFlag](Context-Objects#hasflagstring-key-boolean)
+- [getInt](Context-Objects#getintstring-key-int)
+- [setInt](Context-Objects#setintstring-key-int-value-void)
+- [addToInt](Context-Objects#addtointstring-key-int-amount-void)
 
 ----
 #### removeFlag(String key): void
 
-Removes the specified key from the map.
+Removes the specified key from the character.
+
+**RELATED METHODS:**
+- [addFlag](Context-Objects#addflagstring-key-string-value-void)
+- [getFlag](Context-Objects#getflagstring-key-string)
+- [setFlag](Context-Objects#setflagstring-key-void)
+- [hasFlag](Context-Objects#hasflagstring-key-boolean)
+- [getInt](Context-Objects#getintstring-key-int)
+- [setInt](Context-Objects#setintstring-key-int-value-void)
+- [addToInt](Context-Objects#addtointstring-key-int-amount-void)
 
 ----
 #### hasFlag(String key): boolean
 
-Returns `true` if the specified key exists in the map.
+Returns `true` if the specified key exists.
 
 **NOTES:**
 - Integers are stored separately from string flags, so it will *not* recognise integer values stored using the `setInt` or `addToInt` methods.
 
+**RELATED METHODS:**
+- [addFlag](Context-Objects#addflagstring-key-string-value-void)
+- [getFlag](Context-Objects#getflagstring-key-string)
+- [setFlag](Context-Objects#setflagstring-key-void)
+- [removeFlag](Context-Objects#removeflagstring-key-void)
+- [getInt](Context-Objects#getintstring-key-int)
+- [setInt](Context-Objects#setintstring-key-int-value-void)
+- [addToInt](Context-Objects#addtointstring-key-int-amount-void)
 
 **Code Example:**
 ```Velocity
@@ -441,10 +487,28 @@ Returns the integer value associated with this key.
 **NOTES:**
 - This method will return `0` if no integer value has been stored using the key.
 
+**RELATED METHODS:**
+- [addFlag](Context-Objects#addflagstring-key-string-value-void)
+- [getFlag](Context-Objects#getflagstring-key-string)
+- [setFlag](Context-Objects#setflagstring-key-void)
+- [removeFlag](Context-Objects#removeflagstring-key-void)
+- [hasFlag](Context-Objects#hasflagstring-key-boolean)
+- [setInt](Context-Objects#setintstring-key-int-value-void)
+- [addToInt](Context-Objects#addtointstring-key-int-amount-void)
+
 ----
 #### setInt(String key, int value): void
 
 Stores the specified integer value using the provided key, *overwriting* any existing values.
+
+**RELATED METHODS:**
+- [addFlag](Context-Objects#addflagstring-key-string-value-void)
+- [getFlag](Context-Objects#getflagstring-key-string)
+- [setFlag](Context-Objects#setflagstring-key-void)
+- [removeFlag](Context-Objects#removeflagstring-key-void)
+- [hasFlag](Context-Objects#hasflagstring-key-boolean)
+- [getInt](Context-Objects#getintstring-key-int)
+- [addToInt](Context-Objects#addtointstring-key-int-amount-void)
 
 ----
 #### addToInt(String key, int amount): void
@@ -454,6 +518,15 @@ Increments the entry by the provided amount.
 **NOTES:**
 - If there was no entry for that key then a new one will be created with amount as the value.
 - To decrease an entry, use a negative number for the integer parameter.
+
+**RELATED METHODS:**
+- [addFlag](Context-Objects#addflagstring-key-string-value-void)
+- [getFlag](Context-Objects#getflagstring-key-string)
+- [setFlag](Context-Objects#setflagstring-key-void)
+- [removeFlag](Context-Objects#removeflagstring-key-void)
+- [hasFlag](Context-Objects#hasflagstring-key-boolean)
+- [getInt](Context-Objects#getintstring-key-int)
+- [setInt](Context-Objects#setintstring-key-int-value-void)
 
 ----
 ### Other Actions
@@ -589,14 +662,42 @@ For writing, *arousal* should be checked against five general categories: discom
 ----
 #### isArousalClose(): boolean
 
+Returns `true` if the character's arousal is equal to or greater than the *close* threshold.
+
+**RELATED METHODS:**
+- [isArousalComfort](Context-Objects#isarousalcomfort-boolean)
+- [isArousalEnjoy](Context-Objects#isarousalenjoy-boolean)
+- [isArousalOrgasm](Context-Objects#isarousalorgasm-boolean)
+
 ----
 #### isArousalComfort(): boolean
+
+Returns `true` if the character's arousal is equal to or greater than the *comfort* threshold.
+
+**RELATED METHODS:**
+- [isArousalEnjoy](Context-Objects#isarousalenjoy-boolean)
+- [isArousalClose](Context-Objects#isarousalclose-boolean)
+- [isArousalOrgasm](Context-Objects#isarousalorgasm-boolean)
 
 ----
 #### isArousalEnjoy(): boolean
 
+Returns `true` if the character's arousal is equal to or greater than the *enjoy* threshold.
+
+**RELATED METHODS:**
+- [isArousalComfort](Context-Objects#isarousalcomfort-boolean)
+- [isArousalClose](Context-Objects#isarousalclose-boolean)
+- [isArousalOrgasm](Context-Objects#isarousalorgasm-boolean)
+
 ----
 #### isArousalOrgasm(): boolean
+
+Returns `true` if the character's arousal is equal to or greater than the *orgasm* threshold.
+
+**RELATED METHODS:**
+- [isArousalComfort](Context-Objects#isarousalcomfort-boolean)
+- [isArousalEnjoy](Context-Objects#isarousalenjoy-boolean)
+- [isArousalClose](Context-Objects#isarousalclose-boolean)
 
 ----
 ## Other methods
@@ -656,7 +757,12 @@ If the character is in their thirties then `isOlderThan("THIRTIES")` will return
 Returns `true` if the character is completely naked.
 
 **RELATED METHODS:**
-- [isNakedExceptLegwear](Context-Objects#isnakedexceptlegwear-boolean).
+- [isLegwearWorn](Context-Objects#islegwearworn-boolean)
+- [isPussyExposed](Context-Objects#ispussyexposed-boolean)
+- [isBreastsExposed](Context-Objects#isbreastsexposed-boolean)
+- [isStomachExposed](Context-Objects#isstomachexposed-boolean)
+- [isClothesDisarrayed](Context-Objects#isclothesdisarrayed-boolean)
+- [isNakedExceptLegwear](Context-Objects#isnakedexceptlegwear-boolean)
 
 ----
 ### isDrunk(): boolean
@@ -667,6 +773,10 @@ Returns `true` if the character counts as drunk or higher.
 - Clear headed player-characters (`CLEAR_HEAD`) *never* count as drunk. This should be used to affect descriptive text.
 - Alcohol's effect on willpower tests is handled *automatically*, you don't need to write modifiers based on it.
 
+**RELATED METHODS:**
+- [isVeryDrunk](Context-Objects#isverydrunk-boolean)
+- [isMaxDrunk](Context-Objects#ismaxdrunk-boolean)
+
 ----
 ### isVeryDrunk(): boolean
 
@@ -675,6 +785,10 @@ Returns `true` if the character is very drunk.
 **NOTES:**
 - At this level they may need alternative paths where they slur their words, fall over, say something they shouldn't or generally make other 'boozy' mistakes.
 
+**RELATED METHODS:**
+- [isDrunk](Context-Objects#isdrunk-boolean)
+- [isMaxDrunk](Context-Objects#ismaxdrunk-boolean)
+
 ----
 ### isMaxDrunk(): boolean
 
@@ -682,6 +796,10 @@ Returns `true` if the character has reached the maximum drunkenness level.
 
 **NOTES:** 
 - Newlife doesn't have characters passing out, but at this level they might need to call an end to an evening early, be helped home, or start  feeling sick. Characters who drink this much should also have a hangover the next day if your scene is one that lasts overnight.
+
+**RELATED METHODS:**
+- [isDrunk](Context-Objects#isdrunk-boolean)
+- [isVeryDrunk](Context-Objects#isverydrunk-boolean)
 
 ----
 ### getStrength(): int
@@ -1152,6 +1270,14 @@ Returns the upper-body clothing status.
 
 Returns `true` if the legwear status is `WORN`. Otherwise, it indicates that the legwear is `OFF` as the other two statuses are not available for legwear.
 
+**RELATED METHODS:**
+- [isPussyExposed](Context-Objects#ispussyexposed-boolean)
+- [isBreastsExposed](Context-Objects#isbreastsexposed-boolean)
+- [isStomachExposed](Context-Objects#isstomachexposed-boolean)
+- [isClothesDisarrayed](Context-Objects#isclothesdisarrayed-boolean)
+- [isNakedExceptLegwear](Context-Objects#isnakedexceptlegwear-boolean)
+- [isNaked](Context-Objects#isnaked-boolean)
+
 #### isPussyExposed(): boolean
 
 Returns `true` if the PC's pussy is exposed allowing her to be penetrated, touched or whatever. 
@@ -1160,13 +1286,37 @@ Returns `true` if the PC's pussy is exposed allowing her to be penetrated, touch
 - This checks clothing statuses and the length of her lower-body clothing if it's a skirt. 
 - Typically you'd use this in your writing rather than checking bottom and panties statuses.
 
+**RELATED METHODS:**
+- [isLegwearWorn](Context-Objects#islegwearworn-boolean)
+- [isBreastsExposed](Context-Objects#isbreastsexposed-boolean)
+- [isStomachExposed](Context-Objects#isstomachexposed-boolean)
+- [isClothesDisarrayed](Context-Objects#isclothesdisarrayed-boolean)
+- [isNakedExceptLegwear](Context-Objects#isnakedexceptlegwear-boolean)
+- [isNaked](Context-Objects#isnaked-boolean)
+
 #### isBreastsExposed(): boolean
 
 Returns `true` if the PC's breasts are uncovered.
 
+**RELATED METHODS:**
+- [isLegwearWorn](Context-Objects#islegwearworn-boolean)
+- [isPussyExposed](Context-Objects#ispussyexposed-boolean)
+- [isStomachExposed](Context-Objects#isstomachexposed-boolean)
+- [isClothesDisarrayed](Context-Objects#isclothesdisarrayed-boolean)
+- [isNakedExceptLegwear](Context-Objects#isnakedexceptlegwear-boolean)
+- [isNaked](Context-Objects#isnaked-boolean)
+
 #### isStomachExposed(): boolean
 
 Returns `true` if the PC's stomach is bare, either due to her top being `OFF` or `EXPOSED` or due to it having the `SHOWS_TUMMY` flag.
+
+**RELATED METHODS:**
+- [isLegwearWorn](Context-Objects#islegwearworn-boolean)
+- [isPussyExposed](Context-Objects#ispussyexposed-boolean)
+- [isBreastsExposed](Context-Objects#isbreastsexposed-boolean)
+- [isClothesDisarrayed](Context-Objects#isclothesdisarrayed-boolean)
+- [isNakedExceptLegwear](Context-Objects#isnakedexceptlegwear-boolean)
+- [isNaked](Context-Objects#isnaked-boolean)
 
 #### isClothesDisarrayed(): boolean
 
@@ -1175,17 +1325,30 @@ Returns `true` if *any* of the PC's outfit has been disarrayed in any way.
 **NOTES:**
 - If any item has a clothing status other than `WORN` or, in the case of clothing slots where the outfit has no clothing item, `OFF`.
 
+**RELATED METHODS:**
+- [isLegwearWorn](Context-Objects#islegwearworn-boolean)
+- [isPussyExposed](Context-Objects#ispussyexposed-boolean)
+- [isBreastsExposed](Context-Objects#isbreastsexposed-boolean)
+- [isStomachExposed](Context-Objects#isstomachexposed-boolean)
+- [isNakedExceptLegwear](Context-Objects#isnakedexceptlegwear-boolean)
+- [isNaked](Context-Objects#isnaked-boolean)
+
 #### isNakedExceptLegwear(): boolean
 
 Returns `true` if the PC is completely naked *or* if she's only wearing legwear.
 
 **RELATED METHODS:**
+- [isLegwearWorn](Context-Objects#islegwearworn-boolean)
+- [isPussyExposed](Context-Objects#ispussyexposed-boolean)
+- [isBreastsExposed](Context-Objects#isbreastsexposed-boolean)
+- [isStomachExposed](Context-Objects#isstomachexposed-boolean)
+- [isClothesDisarrayed](Context-Objects#isclothesdisarrayed-boolean)
 - [isNaked](Context-Objects#isnaked-boolean)
 
 
 #### isOutfitCute(): boolean
 
-Returns `true` if the PC's outfit is noticeably cute. 
+Returns `true` if the PC's outfit is considered *cute*. 
 
 **NOTES:**
 - This includes any bonus from the fashion skill but does *not* include any base cuteness value the player themselves has (e.g. from the cute trait).
@@ -1194,23 +1357,43 @@ Returns `true` if the PC's outfit is noticeably cute.
 - It is *not* possible for the PC's outfit to be both cute *and* sexy at the same time.
 - "Cute" requires >= 5 (as of Newlife 0.4.30)) but the exact internal numbers may change in the future.
 
+**RELATED METHODS:**
+- [isOutfitSexy](Context-Objects#isoutfitsexy-boolean)
+- [isOutfitElegant](Context-Objects#isoutfitelegant-boolean)
+- [isOutfitCasual](Context-Objects#isoutfitcasual-boolean)
+
 #### isOutfitSexy(): boolean
 
-Similar to `getOutfitCute` but checks for "sexiness" (i.e. negative cuteness).
+Returns `true` if the PC's outfit is considered *sexy*. 
+
+**RELATED METHODS:**
+- [isOutfitCute](Context-Objects#isoutfitcute-boolean)
+- [isOutfitElegant](Context-Objects#isoutfitelegant-boolean)
+- [isOutfitCasual](Context-Objects#isoutfitcasual-boolean)
 
 #### isOutfitElegant(): boolean
 
-Similar to `getOutfitCute` but checks for elegance. 
+Returns `true` if the PC's outfit is considered *elegant*. 
 
 **NOTES:**
 - The Elegant/Casual axis is tracked separately from the Cute/Sexy one, so it's possible to be e.g. both sexy and elegant at the same time.
 
+**RELATED METHODS:**
+- [isOutfitCute](Context-Objects#isoutfitcute-boolean)
+- [isOutfitSexy](Context-Objects#isoutfitsexy-boolean)
+- [isOutfitCasual](Context-Objects#isoutfitcasual-boolean)
+
 #### isOutfitCasual(): boolean
 
-Similar to `getOutfitCute` but tracks Casualness. 
+Returns `true` if the PC's outfit is considered *casual*. 
 
 **NOTES:**
 - Casualness is opposed to Elegance. An outfit can be casual, elegant or neither; but it can never be both at once.
+
+**RELATED METHODS:**
+- [isOutfitCute](Context-Objects#isoutfitcute-boolean)
+- [isOutfitSexy](Context-Objects#isoutfitsexy-boolean)
+- [isOutfitElegant](Context-Objects#isoutfitelegant-boolean)
 
 ### Stress
 
