@@ -175,8 +175,15 @@ Provides a very large increase to arousal.
 
 **NOTES:**
 - The actual amount is *10*.
-- Opposite of [reduceArousalHuge](#reducearousalhuge-void).
 - Use this only if something is supposed to be exceptionally arousing or if your scene wants to summarise an extended makeout in one action.
+
+**RELATED METHODS:**
+| Type | Methods |
+| :--- | :------ |
+| Add | [addArousalTiny](#addarousaltiny-void), [addArousalSmall](#addarousalsmall-void), [addArousalMedium](#addarousalmedium-void), [addArousalLarge](#addarousallarge-void), *addArousalHuge* |
+| Condition | [isArousalComfort](#isarousalcomfort-void),[isArousalEnjoy](#isarousalenjoy-void), [isArousalClose](#isarousalclose-void),  [isArousalOrgasm](#isarousalorgasm-void) |
+| Reduce | [reduceArousalTiny](#reducearousaltiny-void), [reduceArousalSmall](#reducearousalsmall-void), [reduceArousalMedium](#reducearousalmedium-void), [reduceArousalLarge](#reducearousallarge-void), [reduceArousalHuge](#reducearousalhuge-void) | 
+| Set | [setArousalDiscomfort](#setarousaldiscomfort-void), [setArousalComfort](#setarousalcomfort-void), [setArousalEnjoy](#setarousalenjoy-void), [setArousalClose](#setarousalclose-void), [setArousalOrgasm](#setarousalorgasm-void) |
 
 ----
 #### addArousalLarge(): void
@@ -185,8 +192,16 @@ Provides a significant increase to arousal.
 
 **NOTES:**
 - The actual amount is *6*.
-- Opposite of [reduceArousalLarge](#reducearousallarge-void).
 - Appropriate only for things that are major turn-ons for the character.
+
+**RELATED METHODS:**
+| Type | Methods |
+| :--- | :------ |
+| Add | [addArousalTiny](#addarousaltiny-void), [addArousalSmall](#addarousalsmall-void), [addArousalMedium](#addarousalmedium-void), *addArousalLarge*, [addArousalHuge](#addarousalhuge-void) |
+| Condition | [isArousalComfort](#isarousalcomfort-void),[isArousalEnjoy](#isarousalenjoy-void), [isArousalClose](#isarousalclose-void),  [isArousalOrgasm](#isarousalorgasm-void) |
+| Reduce | [reduceArousalTiny](#reducearousaltiny-void), [reduceArousalSmall](#reducearousalsmall-void), [reduceArousalMedium](#reducearousalmedium-void), [reduceArousalLarge](#reducearousallarge-void), [reduceArousalHuge](#reducearousalhuge-void) | 
+| Set | [setArousalDiscomfort](#setarousaldiscomfort-void), [setArousalComfort](#setarousalcomfort-void), [setArousalEnjoy](#setarousalenjoy-void), [setArousalClose](#setarousalclose-void), [setArousalOrgasm](#setarousalorgasm-void) |
+
 
 ----
 #### addArousalMedium(): void
@@ -195,8 +210,15 @@ Provides a moderate increase to arousal.
 
 **NOTES:**
 - The actual amount is *4*.
-- Opposite of [reduceArousalMedium](#reducearousalmedium-void).
 - Use this for very sexual actions that the character enjoys
+
+**RELATED METHODS:**
+| Type | Methods |
+| :--- | :------ |
+| Add | [addArousalTiny](#addarousaltiny-void), [addArousalSmall](#addarousalsmall-void), *addArousalMedium*, [addArousalLarge](#addarousallarge-void), [addArousalHuge](#addarousalhuge-void) |
+| Condition | [isArousalComfort](#isarousalcomfort-void),[isArousalEnjoy](#isarousalenjoy-void), [isArousalClose](#isarousalclose-void),  [isArousalOrgasm](#isarousalorgasm-void) |
+| Reduce | [reduceArousalTiny](#reducearousaltiny-void), [reduceArousalSmall](#reducearousalsmall-void), [reduceArousalMedium](#reducearousalmedium-void), [reduceArousalLarge](#reducearousallarge-void), [reduceArousalHuge](#reducearousalhuge-void) | 
+| Set | [setArousalDiscomfort](#setarousaldiscomfort-void), [setArousalComfort](#setarousalcomfort-void), [setArousalEnjoy](#setarousalenjoy-void), [setArousalClose](#setarousalclose-void), [setArousalOrgasm](#setarousalorgasm-void) |
 
 ----
 #### addArousalSmall(): void
@@ -205,9 +227,16 @@ Provides a small increase to the character's arousal level.
 
 **NOTES:**
 - The actual amount is *2*.
-- Opposite of [reduceArousalSmall](#reducearousalsmall-void).
 - Use this for actions that are sexual but not massively so, such as light groping and so on.
 - You can also use it instead of Medium for sexual actions that the character doesn't especially enjoy, although if s/he *really* isn't into them then you can reduce arousal instead.
+
+**RELATED METHODS:**
+| Type | Methods |
+| :--- | :------ |
+| Add | [addArousalTiny](#addarousaltiny-void), *addArousalSmall*, [addArousalMedium](#addarousalmedium-void), [addArousalLarge](#addarousallarge-void), [addArousalHuge](#addarousalhuge-void) |
+| Condition | [isArousalComfort](#isarousalcomfort-void),[isArousalEnjoy](#isarousalenjoy-void), [isArousalClose](#isarousalclose-void),  [isArousalOrgasm](#isarousalorgasm-void) |
+| Reduce | [reduceArousalTiny](#reducearousaltiny-void), [reduceArousalSmall](#reducearousalsmall-void), [reduceArousalMedium](#reducearousalmedium-void), [reduceArousalLarge](#reducearousallarge-void), [reduceArousalHuge](#reducearousalhuge-void) | 
+| Set | [setArousalDiscomfort](#setarousaldiscomfort-void), [setArousalComfort](#setarousalcomfort-void), [setArousalEnjoy](#setarousalenjoy-void), [setArousalClose](#setarousalclose-void), [setArousalOrgasm](#setarousalorgasm-void) |
 
 ----
 #### addArousalTiny(): void
@@ -216,8 +245,15 @@ Provides a very small increase to the character's arousal level.
 
 **NOTES:**
 - The actual amount is *1*.
-- Opposite of [reduceArousalTiny](#reducearousaltiny-void).
 - Use this when something turns them on but not to a great extent, or as an additional bonus for having a relevant preference trait.
+
+**RELATED METHODS:**
+| Type | Methods |
+| :--- | :------ |
+| Add | *addArousalTiny*, [addArousalSmall](#addarousalsmall-void), [addArousalMedium](#addarousalmedium-void), [addArousalLarge](#addarousallarge-void), [addArousalHuge](#addarousalhuge-void) |
+| Condition | [isArousalComfort](#isarousalcomfort-void),[isArousalEnjoy](#isarousalenjoy-void), [isArousalClose](#isarousalclose-void),  [isArousalOrgasm](#isarousalorgasm-void) |
+| Reduce | [reduceArousalTiny](#reducearousaltiny-void), [reduceArousalSmall](#reducearousalsmall-void), [reduceArousalMedium](#reducearousalmedium-void), [reduceArousalLarge](#reducearousallarge-void), [reduceArousalHuge](#reducearousalhuge-void) | 
+| Set | [setArousalDiscomfort](#setarousaldiscomfort-void), [setArousalComfort](#setarousalcomfort-void), [setArousalEnjoy](#setarousalenjoy-void), [setArousalClose](#setarousalclose-void), [setArousalOrgasm](#setarousalorgasm-void) |
 
 **Example:**
 - A character with the `OVERACTIVE_IMAGINATION` trait could get a tiny or small arousal boost when her partner says something sexual in addition to a small boost that applies to all characters.
@@ -229,8 +265,15 @@ Provides a very large decrease to arousal.
 
 **NOTES:**
 - The actual amount is *10*.
-- Opposite of [addArousalHuge](#addarousalhuge-void).
 - Use for situations that "kill the mood".
+
+**RELATED METHODS:**
+| Type | Methods |
+| :--- | :------ |
+| Add | [addArousalTiny](#addarousaltiny-void), [addArousalSmall](#addarousalsmall-void), [addArousalMedium](#addarousalmedium-void), [addArousalLarge](#addarousallarge-void), [addArousalHuge](#addarousalhuge-void) |
+| Condition | [isArousalComfort](#isarousalcomfort-void),[isArousalEnjoy](#isarousalenjoy-void), [isArousalClose](#isarousalclose-void),  [isArousalOrgasm](#isarousalorgasm-void) |
+| Reduce | [reduceArousalTiny](#reducearousaltiny-void), [reduceArousalSmall](#reducearousalsmall-void), [reduceArousalMedium](#reducearousalmedium-void), [reduceArousalLarge](#reducearousallarge-void), *reduceArousalHuge* | 
+| Set | [setArousalDiscomfort](#setarousaldiscomfort-void), [setArousalComfort](#setarousalcomfort-void), [setArousalEnjoy](#setarousalenjoy-void), [setArousalClose](#setarousalclose-void), [setArousalOrgasm](#setarousalorgasm-void) |
 
 ----
 #### reduceArousalLarge(): void
@@ -239,8 +282,15 @@ Provides a significant decrease to arousal.
 
 **NOTES:**
 - The actual amount is *6*.
-- Opposite of [addArousalLarge](#addarousallarge-void).
 - Use for when a character does something significantly against their partner's preference trait.
+
+**RELATED METHODS:**
+| Type | Methods |
+| :--- | :------ |
+| Add | [addArousalTiny](#addarousaltiny-void), [addArousalSmall](#addarousalsmall-void), [addArousalMedium](#addarousalmedium-void), [addArousalLarge](#addarousallarge-void), [addArousalHuge](#addarousalhuge-void) |
+| Condition | [isArousalComfort](#isarousalcomfort-void),[isArousalEnjoy](#isarousalenjoy-void), [isArousalClose](#isarousalclose-void),  [isArousalOrgasm](#isarousalorgasm-void) |
+| Reduce | [reduceArousalTiny](#reducearousaltiny-void), [reduceArousalSmall](#reducearousalsmall-void), [reduceArousalMedium](#reducearousalmedium-void), *reduceArousalLarge*, [reduceArousalHuge](#reducearousalhuge-void) | 
+| Set | [setArousalDiscomfort](#setarousaldiscomfort-void), [setArousalComfort](#setarousalcomfort-void), [setArousalEnjoy](#setarousalenjoy-void), [setArousalClose](#setarousalclose-void), [setArousalOrgasm](#setarousalorgasm-void) |
 
 **Example:** The PC putting a condom on a man who hates them.
 
@@ -251,8 +301,15 @@ Provides a moderate decrease to arousal.
 
 **NOTES:**
 - The actual amount is *4*.
-- Opposite of [addArousalMedium](#addarousalmedium-void).
 - Use when a character does something against their partner's preference trait.
+
+**RELATED METHODS:**
+| Type | Methods |
+| :--- | :------ |
+| Add | [addArousalTiny](#addarousaltiny-void), [addArousalSmall](#addarousalsmall-void), [addArousalMedium](#addarousalmedium-void), [addArousalLarge](#addarousallarge-void), [addArousalHuge](#addarousalhuge-void) |
+| Condition | [isArousalComfort](#isarousalcomfort-void),[isArousalEnjoy](#isarousalenjoy-void), [isArousalClose](#isarousalclose-void),  [isArousalOrgasm](#isarousalorgasm-void) |
+| Reduce | [reduceArousalTiny](#reducearousaltiny-void), [reduceArousalSmall](#reducearousalsmall-void), *reduceArousalMedium*, [reduceArousalLarge](#reducearousallarge-void), [reduceArousalHuge](#reducearousalhuge-void) | 
+| Set | [setArousalDiscomfort](#setarousaldiscomfort-void), [setArousalComfort](#setarousalcomfort-void), [setArousalEnjoy](#setarousalenjoy-void), [setArousalClose](#setarousalclose-void), [setArousalOrgasm](#setarousalorgasm-void) |
 
 ----
 #### reduceArousalSmall(): void
@@ -261,8 +318,15 @@ Provides a small increase to the character's decrease level.
 
 **NOTES:**
 - The actual amount is *2*.
-- Opposite of [addArousalSmall](#addarousalsmall-void).
 - Provides a minor reduction, suitable for when a character does something that directly opposes their partner's preference trait but not in an especially important way.
+
+**RELATED METHODS:**
+| Type | Methods |
+| :--- | :------ |
+| Add | [addArousalTiny](#addarousaltiny-void), [addArousalSmall](#addarousalsmall-void), [addArousalMedium](#addarousalmedium-void), [addArousalLarge](#addarousallarge-void), [addArousalHuge](#addarousalhuge-void) |
+| Condition | [isArousalComfort](#isarousalcomfort-void),[isArousalEnjoy](#isarousalenjoy-void), [isArousalClose](#isarousalclose-void),  [isArousalOrgasm](#isarousalorgasm-void) |
+| Reduce | [reduceArousalTiny](#reducearousaltiny-void), *reduceArousalSmall*, [reduceArousalMedium](#reducearousalmedium-void), [reduceArousalLarge](#reducearousallarge-void), [reduceArousalHuge](#reducearousalhuge-void) | 
+| Set | [setArousalDiscomfort](#setarousaldiscomfort-void), [setArousalComfort](#setarousalcomfort-void), [setArousalEnjoy](#setarousalenjoy-void), [setArousalClose](#setarousalclose-void), [setArousalOrgasm](#setarousalorgasm-void) |
 
 **Example:** The PC talks about how she loves oral when her partner doesn't like it.
 
@@ -273,33 +337,80 @@ Provides a very small increase to the character's decrease level.
 
 **NOTES:**
 - The actual amount is *1*.
-- Opposite of [addArousalTiny](#addarousaltiny-void).
 - Use for especially minor arousal-reducing actions.
+
+**RELATED METHODS:**
+| Type | Methods |
+| :--- | :------ |
+| Add | [addArousalTiny](#addarousaltiny-void), [addArousalSmall](#addarousalsmall-void), [addArousalMedium](#addarousalmedium-void), [addArousalLarge](#addarousallarge-void), [addArousalHuge](#addarousalhuge-void) |
+| Condition | [isArousalComfort](#isarousalcomfort-void),[isArousalEnjoy](#isarousalenjoy-void), [isArousalClose](#isarousalclose-void),  [isArousalOrgasm](#isarousalorgasm-void) |
+| Reduce | *reduceArousalTiny*, [reduceArousalSmall](#reducearousalsmall-void), [reduceArousalMedium](#reducearousalmedium-void), [reduceArousalLarge](#reducearousallarge-void), [reduceArousalHuge](#reducearousalhuge-void) | 
+| Set | [setArousalDiscomfort](#setarousaldiscomfort-void), [setArousalComfort](#setarousalcomfort-void), [setArousalEnjoy](#setarousalenjoy-void), [setArousalClose](#setarousalclose-void), [setArousalOrgasm](#setarousalorgasm-void) |
 
 ----
 #### setArousalDiscomfort(): void
 
 Sets the character's arousal level to the lowest, "discomfort" level, regardless of what it was before.
 
+**RELATED METHODS:**
+| Type | Methods |
+| :--- | :------ |
+| Add | [addArousalTiny](#addarousaltiny-void), [addArousalSmall](#addarousalsmall-void), [addArousalMedium](#addarousalmedium-void), [addArousalLarge](#addarousallarge-void), [addArousalHuge](#addarousalhuge-void) |
+| Condition | [isArousalComfort](#isarousalcomfort-void),[isArousalEnjoy](#isarousalenjoy-void), [isArousalClose](#isarousalclose-void),  [isArousalOrgasm](#isarousalorgasm-void) |
+| Reduce | [reduceArousalTiny](#reducearousaltiny-void), [reduceArousalSmall](#reducearousalsmall-void), [reduceArousalMedium](#reducearousalmedium-void), [reduceArousalLarge](#reducearousallarge-void), [reduceArousalHuge](#reducearousalhuge-void) | 
+| Set | *setArousalDiscomfort*, [setArousalComfort](#setarousalcomfort-void), [setArousalEnjoy](#setarousalenjoy-void), [setArousalClose](#setarousalclose-void), [setArousalOrgasm](#setarousalorgasm-void) |
+
 ----
 #### setArousalComfort(): void
 
 Sets the character's arousal level to the "comfort" threshold, regardless of what it was before.
+
+**RELATED METHODS:**
+| Type | Methods |
+| :--- | :------ |
+| Add | [addArousalTiny](#addarousaltiny-void), [addArousalSmall](#addarousalsmall-void), [addArousalMedium](#addarousalmedium-void), [addArousalLarge](#addarousallarge-void), [addArousalHuge](#addarousalhuge-void) |
+| Condition | [isArousalComfort](#isarousalcomfort-void),[isArousalEnjoy](#isarousalenjoy-void), [isArousalClose](#isarousalclose-void),  [isArousalOrgasm](#isarousalorgasm-void) |
+| Reduce | [reduceArousalTiny](#reducearousaltiny-void), [reduceArousalSmall](#reducearousalsmall-void), [reduceArousalMedium](#reducearousalmedium-void), [reduceArousalLarge](#reducearousallarge-void), [reduceArousalHuge](#reducearousalhuge-void) | 
+| Set | [setArousalDiscomfort](#setarousaldiscomfort-void), *setArousalComfort*, [setArousalEnjoy](#setarousalenjoy-void), [setArousalClose](#setarousalclose-void), [setArousalOrgasm](#setarousalorgasm-void) |
 
 ----
 #### setArousalEnjoy(): void
 
 Sets the character's arousal level to the "enjoy" threshold, regardless of what it was before.
 
+**RELATED METHODS:**
+| Type | Methods |
+| :--- | :------ |
+| Add | [addArousalTiny](#addarousaltiny-void), [addArousalSmall](#addarousalsmall-void), [addArousalMedium](#addarousalmedium-void), [addArousalLarge](#addarousallarge-void), [addArousalHuge](#addarousalhuge-void) |
+| Condition | [isArousalComfort](#isarousalcomfort-void),[isArousalEnjoy](#isarousalenjoy-void), [isArousalClose](#isarousalclose-void),  [isArousalOrgasm](#isarousalorgasm-void) |
+| Reduce | [reduceArousalTiny](#reducearousaltiny-void), [reduceArousalSmall](#reducearousalsmall-void), [reduceArousalMedium](#reducearousalmedium-void), [reduceArousalLarge](#reducearousallarge-void), [reduceArousalHuge](#reducearousalhuge-void) | 
+| Set | [setArousalDiscomfort](#setarousaldiscomfort-void), [setArousalComfort](#setarousalcomfort-void), *setArousalEnjoy*, [setArousalClose](#setarousalclose-void), [setArousalOrgasm](#setarousalorgasm-void) |
+
 ----
 #### setArousalClose(): void
 
 Sets the character's arousal level to the "close" threshold, regardless of what it was before.
 
+**RELATED METHODS:**
+| Type | Methods |
+| :--- | :------ |
+| Add | [addArousalTiny](#addarousaltiny-void), [addArousalSmall](#addarousalsmall-void), [addArousalMedium](#addarousalmedium-void), [addArousalLarge](#addarousallarge-void), [addArousalHuge](#addarousalhuge-void) |
+| Condition | [isArousalComfort](#isarousalcomfort-void),[isArousalEnjoy](#isarousalenjoy-void), [isArousalClose](#isarousalclose-void),  [isArousalOrgasm](#isarousalorgasm-void) |
+| Reduce | [reduceArousalTiny](#reducearousaltiny-void), [reduceArousalSmall](#reducearousalsmall-void), [reduceArousalMedium](#reducearousalmedium-void), [reduceArousalLarge](#reducearousallarge-void), [reduceArousalHuge](#reducearousalhuge-void) | 
+| Set | [setArousalDiscomfort](#setarousaldiscomfort-void), [setArousalComfort](#setarousalcomfort-void), [setArousalEnjoy](#setarousalenjoy-void), *setArousalClose*, [setArousalOrgasm](#setarousalorgasm-void) |
+
 ----
 #### setArousalOrgasm(): void
 
 Sets the character's arousal level to the "orgasm" threshold, regardless of what it was before.
+
+**RELATED METHODS:**
+| Type | Methods |
+| :--- | :------ |
+| Add | [addArousalTiny](#addarousaltiny-void), [addArousalSmall](#addarousalsmall-void), [addArousalMedium](#addarousalmedium-void), [addArousalLarge](#addarousallarge-void), [addArousalHuge](#addarousalhuge-void) |
+| Condition | [isArousalComfort](#isarousalcomfort-void),[isArousalEnjoy](#isarousalenjoy-void), [isArousalClose](#isarousalclose-void),  [isArousalOrgasm](#isarousalorgasm-void) |
+| Reduce | [reduceArousalTiny](#reducearousaltiny-void), [reduceArousalSmall](#reducearousalsmall-void), [reduceArousalMedium](#reducearousalmedium-void), [reduceArousalLarge](#reducearousallarge-void), [reduceArousalHuge](#reducearousalhuge-void) | 
+| Set | [setArousalDiscomfort](#setarousaldiscomfort-void), [setArousalComfort](#setarousalcomfort-void), [setArousalEnjoy](#setarousalenjoy-void), [setArousalClose](#setarousalclose-void), *setArousalOrgasm* |
 
 ----
 ### Alcohol modifiers
