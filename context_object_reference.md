@@ -169,18 +169,56 @@ Arousal strongly affects *willpower* tests. It's relevant in some text as well: 
 ```
 
 ----
-#### addArousalHuge(): void
+#### addArousalTiny(): void
 
-Provides a very large increase to arousal.
+Provides a very small increase to the character's arousal level.
 
 **NOTES:**
-- The actual amount is *10*.
-- Use this only if something is supposed to be exceptionally arousing or if your scene wants to summarise an extended makeout in one action.
+- The actual amount is *1*.
+- Use this when something turns them on but not to a great extent, or as an additional bonus for having a relevant preference trait.
 
 **RELATED METHODS:**
 | Type | Methods |
 | :--- | :------ |
-| Add | [addArousalTiny](#addarousaltiny-void), [addArousalSmall](#addarousalsmall-void), [addArousalMedium](#addarousalmedium-void), [addArousalLarge](#addarousallarge-void), *addArousalHuge* |
+| Add | *addArousalTiny*, [addArousalSmall](#addarousalsmall-void), [addArousalMedium](#addarousalmedium-void), [addArousalLarge](#addarousallarge-void), [addArousalHuge](#addarousalhuge-void) |
+| Condition | [isArousalComfort](#isarousalcomfort-void),[isArousalEnjoy](#isarousalenjoy-void), [isArousalClose](#isarousalclose-void),  [isArousalOrgasm](#isarousalorgasm-void) |
+| Reduce | [reduceArousalTiny](#reducearousaltiny-void), [reduceArousalSmall](#reducearousalsmall-void), [reduceArousalMedium](#reducearousalmedium-void), [reduceArousalLarge](#reducearousallarge-void), [reduceArousalHuge](#reducearousalhuge-void) | 
+| Set | [setArousalDiscomfort](#setarousaldiscomfort-void), [setArousalComfort](#setarousalcomfort-void), [setArousalEnjoy](#setarousalenjoy-void), [setArousalClose](#setarousalclose-void), [setArousalOrgasm](#setarousalorgasm-void) |
+
+**Example:**
+- A character with the `OVERACTIVE_IMAGINATION` trait could get a tiny or small arousal boost when her partner says something sexual in addition to a small boost that applies to all characters.
+
+----
+#### addArousalSmall(): void
+
+Provides a small increase to the character's arousal level.
+
+**NOTES:**
+- The actual amount is *2*.
+- Use this for actions that are sexual but not massively so, such as light groping and so on.
+- You can also use it instead of Medium for sexual actions that the character doesn't especially enjoy, although if s/he *really* isn't into them then you can reduce arousal instead.
+
+**RELATED METHODS:**
+| Type | Methods |
+| :--- | :------ |
+| Add | [addArousalTiny](#addarousaltiny-void), *addArousalSmall*, [addArousalMedium](#addarousalmedium-void), [addArousalLarge](#addarousallarge-void), [addArousalHuge](#addarousalhuge-void) |
+| Condition | [isArousalComfort](#isarousalcomfort-void),[isArousalEnjoy](#isarousalenjoy-void), [isArousalClose](#isarousalclose-void),  [isArousalOrgasm](#isarousalorgasm-void) |
+| Reduce | [reduceArousalTiny](#reducearousaltiny-void), [reduceArousalSmall](#reducearousalsmall-void), [reduceArousalMedium](#reducearousalmedium-void), [reduceArousalLarge](#reducearousallarge-void), [reduceArousalHuge](#reducearousalhuge-void) | 
+| Set | [setArousalDiscomfort](#setarousaldiscomfort-void), [setArousalComfort](#setarousalcomfort-void), [setArousalEnjoy](#setarousalenjoy-void), [setArousalClose](#setarousalclose-void), [setArousalOrgasm](#setarousalorgasm-void) |
+
+----
+#### addArousalMedium(): void
+
+Provides a moderate increase to arousal. 
+
+**NOTES:**
+- The actual amount is *4*.
+- Use this for very sexual actions that the character enjoys
+
+**RELATED METHODS:**
+| Type | Methods |
+| :--- | :------ |
+| Add | [addArousalTiny](#addarousaltiny-void), [addArousalSmall](#addarousalsmall-void), *addArousalMedium*, [addArousalLarge](#addarousallarge-void), [addArousalHuge](#addarousalhuge-void) |
 | Condition | [isArousalComfort](#isarousalcomfort-void),[isArousalEnjoy](#isarousalenjoy-void), [isArousalClose](#isarousalclose-void),  [isArousalOrgasm](#isarousalorgasm-void) |
 | Reduce | [reduceArousalTiny](#reducearousaltiny-void), [reduceArousalSmall](#reducearousalsmall-void), [reduceArousalMedium](#reducearousalmedium-void), [reduceArousalLarge](#reducearousallarge-void), [reduceArousalHuge](#reducearousalhuge-void) | 
 | Set | [setArousalDiscomfort](#setarousaldiscomfort-void), [setArousalComfort](#setarousalcomfort-void), [setArousalEnjoy](#setarousalenjoy-void), [setArousalClose](#setarousalclose-void), [setArousalOrgasm](#setarousalorgasm-void) |
@@ -204,111 +242,37 @@ Provides a significant increase to arousal.
 
 
 ----
-#### addArousalMedium(): void
+#### addArousalHuge(): void
 
-Provides a moderate increase to arousal. 
-
-**NOTES:**
-- The actual amount is *4*.
-- Use this for very sexual actions that the character enjoys
-
-**RELATED METHODS:**
-| Type | Methods |
-| :--- | :------ |
-| Add | [addArousalTiny](#addarousaltiny-void), [addArousalSmall](#addarousalsmall-void), *addArousalMedium*, [addArousalLarge](#addarousallarge-void), [addArousalHuge](#addarousalhuge-void) |
-| Condition | [isArousalComfort](#isarousalcomfort-void),[isArousalEnjoy](#isarousalenjoy-void), [isArousalClose](#isarousalclose-void),  [isArousalOrgasm](#isarousalorgasm-void) |
-| Reduce | [reduceArousalTiny](#reducearousaltiny-void), [reduceArousalSmall](#reducearousalsmall-void), [reduceArousalMedium](#reducearousalmedium-void), [reduceArousalLarge](#reducearousallarge-void), [reduceArousalHuge](#reducearousalhuge-void) | 
-| Set | [setArousalDiscomfort](#setarousaldiscomfort-void), [setArousalComfort](#setarousalcomfort-void), [setArousalEnjoy](#setarousalenjoy-void), [setArousalClose](#setarousalclose-void), [setArousalOrgasm](#setarousalorgasm-void) |
-
-----
-#### addArousalSmall(): void
-
-Provides a small increase to the character's arousal level.
-
-**NOTES:**
-- The actual amount is *2*.
-- Use this for actions that are sexual but not massively so, such as light groping and so on.
-- You can also use it instead of Medium for sexual actions that the character doesn't especially enjoy, although if s/he *really* isn't into them then you can reduce arousal instead.
-
-**RELATED METHODS:**
-| Type | Methods |
-| :--- | :------ |
-| Add | [addArousalTiny](#addarousaltiny-void), *addArousalSmall*, [addArousalMedium](#addarousalmedium-void), [addArousalLarge](#addarousallarge-void), [addArousalHuge](#addarousalhuge-void) |
-| Condition | [isArousalComfort](#isarousalcomfort-void),[isArousalEnjoy](#isarousalenjoy-void), [isArousalClose](#isarousalclose-void),  [isArousalOrgasm](#isarousalorgasm-void) |
-| Reduce | [reduceArousalTiny](#reducearousaltiny-void), [reduceArousalSmall](#reducearousalsmall-void), [reduceArousalMedium](#reducearousalmedium-void), [reduceArousalLarge](#reducearousallarge-void), [reduceArousalHuge](#reducearousalhuge-void) | 
-| Set | [setArousalDiscomfort](#setarousaldiscomfort-void), [setArousalComfort](#setarousalcomfort-void), [setArousalEnjoy](#setarousalenjoy-void), [setArousalClose](#setarousalclose-void), [setArousalOrgasm](#setarousalorgasm-void) |
-
-----
-#### addArousalTiny(): void
-
-Provides a very small increase to the character's arousal level.
-
-**NOTES:**
-- The actual amount is *1*.
-- Use this when something turns them on but not to a great extent, or as an additional bonus for having a relevant preference trait.
-
-**RELATED METHODS:**
-| Type | Methods |
-| :--- | :------ |
-| Add | *addArousalTiny*, [addArousalSmall](#addarousalsmall-void), [addArousalMedium](#addarousalmedium-void), [addArousalLarge](#addarousallarge-void), [addArousalHuge](#addarousalhuge-void) |
-| Condition | [isArousalComfort](#isarousalcomfort-void),[isArousalEnjoy](#isarousalenjoy-void), [isArousalClose](#isarousalclose-void),  [isArousalOrgasm](#isarousalorgasm-void) |
-| Reduce | [reduceArousalTiny](#reducearousaltiny-void), [reduceArousalSmall](#reducearousalsmall-void), [reduceArousalMedium](#reducearousalmedium-void), [reduceArousalLarge](#reducearousallarge-void), [reduceArousalHuge](#reducearousalhuge-void) | 
-| Set | [setArousalDiscomfort](#setarousaldiscomfort-void), [setArousalComfort](#setarousalcomfort-void), [setArousalEnjoy](#setarousalenjoy-void), [setArousalClose](#setarousalclose-void), [setArousalOrgasm](#setarousalorgasm-void) |
-
-**Example:**
-- A character with the `OVERACTIVE_IMAGINATION` trait could get a tiny or small arousal boost when her partner says something sexual in addition to a small boost that applies to all characters.
-
-----
-#### reduceArousalHuge(): void
-
-Provides a very large decrease to arousal.
+Provides a very large increase to arousal.
 
 **NOTES:**
 - The actual amount is *10*.
-- Use for situations that "kill the mood".
+- Use this only if something is supposed to be exceptionally arousing or if your scene wants to summarise an extended makeout in one action.
 
 **RELATED METHODS:**
 | Type | Methods |
 | :--- | :------ |
-| Add | [addArousalTiny](#addarousaltiny-void), [addArousalSmall](#addarousalsmall-void), [addArousalMedium](#addarousalmedium-void), [addArousalLarge](#addarousallarge-void), [addArousalHuge](#addarousalhuge-void) |
+| Add | [addArousalTiny](#addarousaltiny-void), [addArousalSmall](#addarousalsmall-void), [addArousalMedium](#addarousalmedium-void), [addArousalLarge](#addarousallarge-void), *addArousalHuge* |
 | Condition | [isArousalComfort](#isarousalcomfort-void),[isArousalEnjoy](#isarousalenjoy-void), [isArousalClose](#isarousalclose-void),  [isArousalOrgasm](#isarousalorgasm-void) |
-| Reduce | [reduceArousalTiny](#reducearousaltiny-void), [reduceArousalSmall](#reducearousalsmall-void), [reduceArousalMedium](#reducearousalmedium-void), [reduceArousalLarge](#reducearousallarge-void), *reduceArousalHuge* | 
+| Reduce | [reduceArousalTiny](#reducearousaltiny-void), [reduceArousalSmall](#reducearousalsmall-void), [reduceArousalMedium](#reducearousalmedium-void), [reduceArousalLarge](#reducearousallarge-void), [reduceArousalHuge](#reducearousalhuge-void) | 
 | Set | [setArousalDiscomfort](#setarousaldiscomfort-void), [setArousalComfort](#setarousalcomfort-void), [setArousalEnjoy](#setarousalenjoy-void), [setArousalClose](#setarousalclose-void), [setArousalOrgasm](#setarousalorgasm-void) |
 
 ----
-#### reduceArousalLarge(): void
+#### reduceArousalTiny(): void
 
-Provides a significant decrease to arousal.
+Provides a very small increase to the character's decrease level.
 
 **NOTES:**
-- The actual amount is *6*.
-- Use for when a character does something significantly against their partner's preference trait.
+- The actual amount is *1*.
+- Use for especially minor arousal-reducing actions.
 
 **RELATED METHODS:**
 | Type | Methods |
 | :--- | :------ |
 | Add | [addArousalTiny](#addarousaltiny-void), [addArousalSmall](#addarousalsmall-void), [addArousalMedium](#addarousalmedium-void), [addArousalLarge](#addarousallarge-void), [addArousalHuge](#addarousalhuge-void) |
 | Condition | [isArousalComfort](#isarousalcomfort-void),[isArousalEnjoy](#isarousalenjoy-void), [isArousalClose](#isarousalclose-void),  [isArousalOrgasm](#isarousalorgasm-void) |
-| Reduce | [reduceArousalTiny](#reducearousaltiny-void), [reduceArousalSmall](#reducearousalsmall-void), [reduceArousalMedium](#reducearousalmedium-void), *reduceArousalLarge*, [reduceArousalHuge](#reducearousalhuge-void) | 
-| Set | [setArousalDiscomfort](#setarousaldiscomfort-void), [setArousalComfort](#setarousalcomfort-void), [setArousalEnjoy](#setarousalenjoy-void), [setArousalClose](#setarousalclose-void), [setArousalOrgasm](#setarousalorgasm-void) |
-
-**Example:** The PC putting a condom on a man who hates them.
-
-----
-#### reduceArousalMedium(): void
-
-Provides a moderate decrease to arousal. 
-
-**NOTES:**
-- The actual amount is *4*.
-- Use when a character does something against their partner's preference trait.
-
-**RELATED METHODS:**
-| Type | Methods |
-| :--- | :------ |
-| Add | [addArousalTiny](#addarousaltiny-void), [addArousalSmall](#addarousalsmall-void), [addArousalMedium](#addarousalmedium-void), [addArousalLarge](#addarousallarge-void), [addArousalHuge](#addarousalhuge-void) |
-| Condition | [isArousalComfort](#isarousalcomfort-void),[isArousalEnjoy](#isarousalenjoy-void), [isArousalClose](#isarousalclose-void),  [isArousalOrgasm](#isarousalorgasm-void) |
-| Reduce | [reduceArousalTiny](#reducearousaltiny-void), [reduceArousalSmall](#reducearousalsmall-void), *reduceArousalMedium*, [reduceArousalLarge](#reducearousallarge-void), [reduceArousalHuge](#reducearousalhuge-void) | 
+| Reduce | *reduceArousalTiny*, [reduceArousalSmall](#reducearousalsmall-void), [reduceArousalMedium](#reducearousalmedium-void), [reduceArousalLarge](#reducearousallarge-void), [reduceArousalHuge](#reducearousalhuge-void) | 
 | Set | [setArousalDiscomfort](#setarousaldiscomfort-void), [setArousalComfort](#setarousalcomfort-void), [setArousalEnjoy](#setarousalenjoy-void), [setArousalClose](#setarousalclose-void), [setArousalOrgasm](#setarousalorgasm-void) |
 
 ----
@@ -331,21 +295,58 @@ Provides a small increase to the character's decrease level.
 **Example:** The PC talks about how she loves oral when her partner doesn't like it.
 
 ----
-#### reduceArousalTiny(): void
+#### reduceArousalMedium(): void
 
-Provides a very small increase to the character's decrease level.
+Provides a moderate decrease to arousal. 
 
 **NOTES:**
-- The actual amount is *1*.
-- Use for especially minor arousal-reducing actions.
+- The actual amount is *4*.
+- Use when a character does something against their partner's preference trait.
 
 **RELATED METHODS:**
 | Type | Methods |
 | :--- | :------ |
 | Add | [addArousalTiny](#addarousaltiny-void), [addArousalSmall](#addarousalsmall-void), [addArousalMedium](#addarousalmedium-void), [addArousalLarge](#addarousallarge-void), [addArousalHuge](#addarousalhuge-void) |
 | Condition | [isArousalComfort](#isarousalcomfort-void),[isArousalEnjoy](#isarousalenjoy-void), [isArousalClose](#isarousalclose-void),  [isArousalOrgasm](#isarousalorgasm-void) |
-| Reduce | *reduceArousalTiny*, [reduceArousalSmall](#reducearousalsmall-void), [reduceArousalMedium](#reducearousalmedium-void), [reduceArousalLarge](#reducearousallarge-void), [reduceArousalHuge](#reducearousalhuge-void) | 
+| Reduce | [reduceArousalTiny](#reducearousaltiny-void), [reduceArousalSmall](#reducearousalsmall-void), *reduceArousalMedium*, [reduceArousalLarge](#reducearousallarge-void), [reduceArousalHuge](#reducearousalhuge-void) | 
 | Set | [setArousalDiscomfort](#setarousaldiscomfort-void), [setArousalComfort](#setarousalcomfort-void), [setArousalEnjoy](#setarousalenjoy-void), [setArousalClose](#setarousalclose-void), [setArousalOrgasm](#setarousalorgasm-void) |
+
+----
+#### reduceArousalLarge(): void
+
+Provides a significant decrease to arousal.
+
+**NOTES:**
+- The actual amount is *6*.
+- Use for when a character does something significantly against their partner's preference trait.
+
+**RELATED METHODS:**
+| Type | Methods |
+| :--- | :------ |
+| Add | [addArousalTiny](#addarousaltiny-void), [addArousalSmall](#addarousalsmall-void), [addArousalMedium](#addarousalmedium-void), [addArousalLarge](#addarousallarge-void), [addArousalHuge](#addarousalhuge-void) |
+| Condition | [isArousalComfort](#isarousalcomfort-void),[isArousalEnjoy](#isarousalenjoy-void), [isArousalClose](#isarousalclose-void),  [isArousalOrgasm](#isarousalorgasm-void) |
+| Reduce | [reduceArousalTiny](#reducearousaltiny-void), [reduceArousalSmall](#reducearousalsmall-void), [reduceArousalMedium](#reducearousalmedium-void), *reduceArousalLarge*, [reduceArousalHuge](#reducearousalhuge-void) | 
+| Set | [setArousalDiscomfort](#setarousaldiscomfort-void), [setArousalComfort](#setarousalcomfort-void), [setArousalEnjoy](#setarousalenjoy-void), [setArousalClose](#setarousalclose-void), [setArousalOrgasm](#setarousalorgasm-void) |
+
+**Example:** The PC putting a condom on a man who hates them.
+
+----
+#### reduceArousalHuge(): void
+
+Provides a very large decrease to arousal.
+
+**NOTES:**
+- The actual amount is *10*.
+- Use for situations that "kill the mood".
+
+**RELATED METHODS:**
+| Type | Methods |
+| :--- | :------ |
+| Add | [addArousalTiny](#addarousaltiny-void), [addArousalSmall](#addarousalsmall-void), [addArousalMedium](#addarousalmedium-void), [addArousalLarge](#addarousallarge-void), [addArousalHuge](#addarousalhuge-void) |
+| Condition | [isArousalComfort](#isarousalcomfort-void),[isArousalEnjoy](#isarousalenjoy-void), [isArousalClose](#isarousalclose-void),  [isArousalOrgasm](#isarousalorgasm-void) |
+| Reduce | [reduceArousalTiny](#reducearousaltiny-void), [reduceArousalSmall](#reducearousalsmall-void), [reduceArousalMedium](#reducearousalmedium-void), [reduceArousalLarge](#reducearousallarge-void), *reduceArousalHuge* | 
+| Set | [setArousalDiscomfort](#setarousaldiscomfort-void), [setArousalComfort](#setarousalcomfort-void), [setArousalEnjoy](#setarousalenjoy-void), [setArousalClose](#setarousalclose-void), [setArousalOrgasm](#setarousalorgasm-void) |
+
 
 ----
 #### setArousalDiscomfort(): void
@@ -415,69 +416,107 @@ Sets the character's arousal level to the "orgasm" threshold, regardless of what
 ----
 ### Alcohol modifiers
 
-Alcohol has a number of game effects, such as modifying *willpower* checks and a 'beer goggles' effect that adds to the attractiveness of all other characters. Your writing will sometimes need to consider drunkenness levels too.
+Alcohol has a number of game effects, such as modifying [willpower](Context-Objects#willpower) checks and a 'beer goggles' effect that adds to the attractiveness of all other characters. Your writing will sometimes need to consider drunkenness levels too.
 
 Call the methods to increase alcohol when a character drinks booze. 
 
 **NOTES:**
-- Where the PC is concerned you should check if she's known-pregnant first and block drinking. 
-- Alcohol for female NPCs should be checked as well if they might be pregnant.
+- Where the PC is concerned you should check if she's [isKnownPregnant](Context-Objects#isknownpregnant-boolean) first and block drinking. 
+- Alcohol for female NPCs should be checked as well if they might be pregnant using [isPregnant](Context-Objects#ispregnant-boolean).
 - It's rare you'll need to *reduce* alcohol. You could use this if they scene involves spending enough time without drinking for them to 'dry out'.
-- Use `clearAlcohol` for scenes that involve sleeping overnight or similar.
-
-----
-#### addAlcoholLarge(): void
-
-Provides a significant increase to the character's alcohol level, equivalent to a strong drink.
-
-----
-**NOTES:**
-- Opposite of [reduceAlcoholLarge](#reducealcohollarge-void).
-
-----
-#### addAlcoholMedium(): void
-
-Provides a moderate increase to the character's alcohol level.
-
-**NOTES:**
-- Opposite of [reduceAlcoholMedium](#reducealcoholmedium-void).
+- Use [clearAlcohol](Context-Objects#clearalcohol-void) for scenes that involve sleeping overnight or similar.
 
 ----
 #### addAlcoholSmall(): void
 
 Provides a small increase to the character's alcohol level, equivalent to a weak drink.
 
-**NOTES:**
-- Opposite of [reduceAlcoholSmall](#reducealcoholsmall-void).
+**RELATED METHODS:**
+| Type | Methods |
+| :--- | :------ |
+| Add | *addAlcoholSmall*, [addAlcoholMedium](Context-Objects#addalcoholmedium-void), [addAlcoholLarge](Context-Objects#addalcohollarge-void) |
+| Condition | [isDrunk](Context-Objects#isdrunk-boolean), [isVeryDrunk](Context-Objects#isverydrunk-boolean), [isMaxDrunk](Context-Objects#ismaxdrunk-boolean) |
+| Reduce | [reduceAlcoholSmall](Context-Objects#reducealcoholsmall-void), [reduceAlcoholMedium](Context-Objects#reducealcoholmedium-void), [reduceAlcoholLarge](Context-Objects#reducealcohollarge-void) |
+| Set | [clearAlcohol](Context-Objects#clearalcohol-void) |
 
 ----
-#### reduceAlcoholLarge(): void
+#### addAlcoholMedium(): void
 
-Reduces the character's alcohol level by a significant amount.
+Provides a moderate increase to the character's alcohol level.
 
-**NOTES:**
-- Opposite of [addAlcoholLarge](#addalcohollarge-void).
+**RELATED METHODS:**
+| Type | Methods |
+| :--- | :------ |
+| Add | [addAlcoholSmall](Context-Objects#addalcoholsmall-void), *addAlcoholMedium*, [addAlcoholLarge](Context-Objects#addalcohollarge-void) |
+| Condition | [isDrunk](Context-Objects#isdrunk-boolean), [isVeryDrunk](Context-Objects#isverydrunk-boolean), [isMaxDrunk](Context-Objects#ismaxdrunk-boolean) |
+| Reduce | [reduceAlcoholSmall](#reducealcoholsmall-void), [reduceAlcoholMedium](#reducealcoholmedium-void), [reduceAlcoholLarge](#reducealcohollarge-void) |
+| Set | [clearAlcohol](Context-Objects#clearalcohol-void) |
 
 ----
-#### reduceAlcoholMedium(): void
+#### addAlcoholLarge(): void
 
-Reduces the character's alcohol level by a moderate amount.
+Provides a significant increase to the character's alcohol level, equivalent to a strong drink.
 
-**NOTES:**
-- Opposite of [addAlcoholMedium](#addalcoholmedium-void).
+**RELATED METHODS:**
+| Type | Methods |
+| :--- | :------ |
+| Add | [addAlcoholSmall](Context-Objects#addalcoholsmall-void), [addAlcoholMedium](Context-Objects#addalcoholmedium-void), *addAlcoholLarge* |
+| Condition | [isDrunk](Context-Objects#isdrunk-boolean), [isVeryDrunk](Context-Objects#isverydrunk-boolean), [isMaxDrunk](Context-Objects#ismaxdrunk-boolean) |
+| Reduce | [reduceAlcoholSmall](Context-Objects#reducealcoholsmall-void), [reduceAlcoholMedium](Context-Objects#reducealcoholmedium-void), [reduceAlcoholLarge](Context-Objects#reducealcohollarge-void) |
+| Set | [clearAlcohol](Context-Objects#clearalcohol-void) |
 
 ----
 #### reduceAlcoholSmall(): void
 
 Reduces the character's alcohol level by a small amount.
 
-**NOTES:**
-- Opposite of [addAlcoholSmall](#addalcoholsmall-void).
+**RELATED METHODS:**
+| Type | Methods |
+| :--- | :------ |
+| Add | [addAlcoholSmall](Context-Objects#addalcoholsmall-void), [addAlcoholMedium](Context-Objects#addalcoholmedium-void), [addAlcoholLarge](Context-Objects#addalcohollarge-void) |
+| Condition | [isDrunk](Context-Objects#isdrunk-boolean), [isVeryDrunk](Context-Objects#isverydrunk-boolean), [isMaxDrunk](Context-Objects#ismaxdrunk-boolean) |
+| Reduce | *reduceAlcoholSmall*, [reduceAlcoholMedium](Context-Objects#reducealcoholmedium-void), [reduceAlcoholLarge](Context-Objects#reducealcohollarge-void) |
+| Set | [clearAlcohol](Context-Objects#clearalcohol-void) |
+
+----
+#### reduceAlcoholMedium(): void
+
+Reduces the character's alcohol level by a moderate amount.
+
+**RELATED METHODS:**
+| Type | Methods |
+| :--- | :------ |
+| Add | [addAlcoholSmall](Context-Objects#addalcoholsmall-void), [addAlcoholMedium](Context-Objects#addalcoholmedium-void), [addAlcoholLarge](Context-Objects#addalcohollarge-void) |
+| Condition | [isDrunk](Context-Objects#isdrunk-boolean), [isVeryDrunk](Context-Objects#isverydrunk-boolean), [isMaxDrunk](Context-Objects#ismaxdrunk-boolean) |
+| Reduce | [reduceAlcoholSmall](Context-Objects#reducealcoholsmall-void), *reduceAlcoholMedium*, [reduceAlcoholLarge](Context-Objects#reducealcohollarge-void) |
+| Set | [clearAlcohol](Context-Objects#clearalcohol-void) |
+
+----
+#### reduceAlcoholLarge(): void
+
+Reduces the character's alcohol level by a significant amount.
+
+**RELATED METHODS:**
+| Type | Methods |
+| :--- | :------ |
+| Add | [addAlcoholSmall](Context-Objects#addalcoholsmall-void), [addAlcoholMedium](Context-Objects#addalcoholmedium-void), [addAlcoholLarge](Context-Objects#addalcohollarge-void) |
+| Condition | [isDrunk](Context-Objects#isdrunk-boolean), [isVeryDrunk](Context-Objects#isverydrunk-boolean), [isMaxDrunk](Context-Objects#ismaxdrunk-boolean) |
+| Reduce | [reduceAlcoholSmall](Context-Objects#reducealcoholsmall-void), [reduceAlcoholMedium](Context-Objects#reducealcoholmedium-void), *reduceAlcoholLarge* |
+| Set | [clearAlcohol](Context-Objects#clearalcohol-void) |
+
 
 ----
 #### clearAlcohol(): void
 
 Sets the character's alcohol level to zero.
+
+**RELATED METHODS:**
+| Type | Methods |
+| :--- | :------ |
+| Add | [addAlcoholSmall](Context-Objects#addalcoholsmall-void), [addAlcoholMedium](Context-Objects#addalcoholmedium-void), [addAlcoholLarge](Context-Objects#addalcohollarge-void) |
+| Condition | [isDrunk](Context-Objects#isdrunk-boolean), [isVeryDrunk](Context-Objects#isverydrunk-boolean), [isMaxDrunk](Context-Objects#ismaxdrunk-boolean) |
+| Reduce | [reduceAlcoholSmall](Context-Objects#reducealcoholsmall-void), [reduceAlcoholMedium](Context-Objects#reducealcoholmedium-void), [reduceAlcoholLarge](Context-Objects#reducealcohollarge-void) |
+| Set | *clearAlcohol* |
 
 ----
 ### Persistent Character Flags
@@ -885,8 +924,12 @@ Returns `true` if the character counts as drunk or higher.
 - Alcohol's effect on willpower tests is handled *automatically*, you don't need to write modifiers based on it.
 
 **RELATED METHODS:**
-- [isVeryDrunk](Context-Objects#isverydrunk-boolean)
-- [isMaxDrunk](Context-Objects#ismaxdrunk-boolean)
+| Type | Methods |
+| :--- | :------ |
+| Add | [addAlcoholSmall](Context-Objects#addalcoholsmall-void), [addAlcoholMedium](Context-Objects#addalcoholmedium-void), [addAlcoholLarge](Context-Objects#addalcohollarge-void) |
+| Condition | *isDrunk*, [isVeryDrunk](Context-Objects#isverydrunk-boolean), [isMaxDrunk](Context-Objects#ismaxdrunk-boolean) |
+| Reduce | [reduceAlcoholSmall](Context-Objects#reducealcoholsmall-void), [reduceAlcoholMedium](Context-Objects#reducealcoholmedium-void), [reduceAlcoholLarge](Context-Objects#reducealcohollarge-void) |
+| Set | [clearAlcohol](Context-Objects#clearalcohol-void) |
 
 ----
 ### isVeryDrunk(): boolean
@@ -897,8 +940,12 @@ Returns `true` if the character is very drunk.
 - At this level they may need alternative paths where they slur their words, fall over, say something they shouldn't or generally make other 'boozy' mistakes.
 
 **RELATED METHODS:**
-- [isDrunk](Context-Objects#isdrunk-boolean)
-- [isMaxDrunk](Context-Objects#ismaxdrunk-boolean)
+| Type | Methods |
+| :--- | :------ |
+| Add | [addAlcoholSmall](Context-Objects#addalcoholsmall-void), [addAlcoholMedium](Context-Objects#addalcoholmedium-void), [addAlcoholLarge](Context-Objects#addalcohollarge-void) |
+| Condition | [isDrunk](Context-Objects#isdrunk-boolean), *isVeryDrunk*, [isMaxDrunk](Context-Objects#ismaxdrunk-boolean) |
+| Reduce | [reduceAlcoholSmall](Context-Objects#reducealcoholsmall-void), [reduceAlcoholMedium](Context-Objects#reducealcoholmedium-void), [reduceAlcoholLarge](Context-Objects#reducealcohollarge-void) |
+| Set | [clearAlcohol](Context-Objects#clearalcohol-void) |
 
 ----
 ### isMaxDrunk(): boolean
@@ -906,11 +953,15 @@ Returns `true` if the character is very drunk.
 Returns `true` if the character has reached the maximum drunkenness level.
 
 **NOTES:** 
-- Newlife doesn't have characters passing out, but at this level they might need to call an end to an evening early, be helped home, or start  feeling sick. Characters who drink this much should also have a hangover the next day if your scene is one that lasts overnight.
+- Newlife doesn't have characters passing out, but at this level they might need to call an end to an evening early, be helped home, or start feeling sick. Characters who drink this much should also have a hangover the next day if your scene is one that lasts overnight.
 
 **RELATED METHODS:**
-- [isDrunk](Context-Objects#isdrunk-boolean)
-- [isVeryDrunk](Context-Objects#isverydrunk-boolean)
+| Type | Methods |
+| :--- | :------ |
+| Add | [addAlcoholSmall](Context-Objects#addalcoholsmall-void), [addAlcoholMedium](Context-Objects#addalcoholmedium-void), [addAlcoholLarge](Context-Objects#addalcohollarge-void) |
+| Condition | [isDrunk](Context-Objects#isdrunk-boolean), [isVeryDrunk](Context-Objects#isverydrunk-boolean), *isMaxDrunk* |
+| Reduce | [reduceAlcoholSmall](Context-Objects#reducealcoholsmall-void), [reduceAlcoholMedium](Context-Objects#reducealcoholmedium-void), [reduceAlcoholLarge](Context-Objects#reducealcohollarge-void) |
+| Set | [clearAlcohol](Context-Objects#clearalcohol-void) |
 
 ----
 ### getStrength(): int
@@ -1532,7 +1583,7 @@ Returns `true` if the PC's stress level is over the 'high' threshold.
 
 #### isExtremeStress(): boolean
 
-Returns `true` if the PC is over the 'extreme' stress threshold. `isStressHigh` is more usually checked in writing so this will probably be used quite rarely.
+Returns `true` if the PC is over the 'extreme' stress threshold. [isHighStress](Context-Objects#ishighstress-boolean) is more usually checked in writing so this will probably be used quite rarely.
 
 #### isMaxStress(): boolean
 
@@ -1544,9 +1595,14 @@ These run a willpower test that is not related to a specific NPC. For willpower 
 
 Willpower should be used to block access to actions. It shouldn't be used to access special content as that would then be unavailable to `IRON_WILL` characters.
 
-Willpower tests are *primarily* based on *arousal*, but with additional modifiers on alcohol, traits, relationships and so on. There's also a random element.
+Willpower tests are upon a number of elements:
+- [arousal](Context-Objects#arousal-modifiers) (primary)
+- [alcohol](Context-Objects#alcohol-modifiers)
+- *traits*
+- *relationships*
+- randomness
 
-Willpower methods have an optional integer modifier. This affects the difficulty of the willpower test. If there are specific traits or whatever that would affect the PC's willpower test in your specific action but not in general then you should check for them and vary the modifier appropriately. 
+Willpower methods have an *optional* integer modifier. This affects the difficulty of the willpower test. If there are specific traits or whatever that would affect the PC's willpower test in your specific action but not in general then you should check for them and vary the modifier appropriately. 
 
 **USAGE:**
 For instance if the willpower test is to enable the ability to ask him to wear a condom then it should get an additional penalty if the PC has the `LIKES_BARE` trait.
@@ -1558,9 +1614,11 @@ For instance if the willpower test is to enable the ability to ask him to wear a
 
 #### Modifiers
 
-Modifiers should usually be multiples of 5 or 10 as arousal is internally on a 100-point scale so single point modifiers are fairly insignificant. 
-Generally a small bonus/penalty would be +/- 5, a moderate one +/-10, a major one +/-20 and a massive one +/- 30. 
-You should avoid having a total modifier of more than 30 or less than -30 if possible and even these are quite extreme values.
+When not passing in a modifier be sure to use the `#if($w.testWillEasy())` syntax and **not** `#if($w.testWillEasy)`.  The latter will always fail (return `false`).
+
+- Modifiers should usually be multiples of 5 or 10 as arousal is internally on a 100-point scale so single point modifiers are fairly insignificant. 
+- Generally a small bonus/penalty would be +/- 5, a moderate one +/-10, a major one +/-20 and a massive one +/- 30. 
+- You should avoid having a total modifier of more than 30 or less than -30 if possible and even these are quite extreme values.
 
 
 #### testWillEasy(int modifier): boolean
@@ -1672,6 +1730,7 @@ Returns `true` if the PC has the provided trait.
 **NOTES:**
 - This is a key method that you'll need to use a lot in almost any Newlife writing.
 - See the enum reference guide for a list of traits and discussion of how they're used.
+
 
 #### isKnownPregnant(): boolean
 
