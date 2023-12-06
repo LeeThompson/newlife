@@ -57,6 +57,7 @@ Velocity also uses the above types and also uses lists (single dimension arrays)
 ## Notes
 - Some methods exist for both the PC and NPCs, they will *usually* work the same, however, there are exceptions to this.  
 
+
 ## Document Organization
 
 This document is divided into sections:
@@ -1748,7 +1749,7 @@ Returns `true` if the PC is lactating.
 - Lactation is something which may be worth mentioning in descriptions or in text based around her breasts.
 - You shouldn't make assumptions about pregnancy from this trait. It's possible to not be lactating despite being heavily pregnant (if lactation is disabled in the game options) and it's possible to be lactating despite never having been pregnant due to the milky trait.
 - Female NPCs have a [method](Context-Objects#islactating-boolean-1) that uses the same name.
-
+- This caused by the `MILKY` trait.
 
 #### isMum(): boolean
 

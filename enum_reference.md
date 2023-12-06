@@ -1397,6 +1397,11 @@ befriending scene and is now dating one of the lowlives: the lowlife in
 question gets the LOWLIFE\_BF trait. These NPCs should generally not be
 given content where they hook up with other men.
 
+MILKY
+Causes the NPC to lactate. Usually you should check isLactating instead of this, as a non-milky NPC can lactate due to pregnancy.
+- Added with the 0.8.4 update.
+
+
 PARTY\_GIRL\_SALES\_COLLEAGUE
 
 Currently unused. I have an outline written somewhere for some scenes
