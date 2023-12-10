@@ -25,6 +25,12 @@ Description.
 | MethodType | [methodName](#methodReference), *currentMethod* |
 
 
+## Methods
+
+| Method | Type | Scope | Mechanic/Item | Change | Parameters | Returns |
+| :------- | :--- | :---- | :------------ | :----- | :---- | :---- |
+| [methodName](#methodReference) | Type | Scope | Mechanic/Group | What It Does | Parameters | Returns |
+
 ## Code Examples
 
 **Code Examples:**

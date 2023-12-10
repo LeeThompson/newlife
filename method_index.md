@@ -1,6 +1,6 @@
 ## Arousal
 
-| Function | Type | Scope | Mechanic/Item | Change | Parameters | Returns |
+| Method | Type | Scope | Mechanic/Item | Change | Parameters | Returns |
 | :------- | :--- | :---- | :------------ | :----- | :---- | :---- |
 | [addArousalTiny](Context-Objects#addarousaltiny-void) | Modify | PC/NPC | Arousal | Very small Increase (1) | None  | Void |
 | [addArousalSmall](Context-Objects#addarousalsmall-void) | Modify | PC/NPC | Arousal | Small increase (2) | None  | Void |
@@ -24,7 +24,7 @@
 
 ## Alcohol
 
-| Function | Type | Scope | Mechanic/Item | Change | Parameters | Returns |
+| Method | Type | Scope | Mechanic/Item | Change | Parameters | Returns |
 | :------- | :--- | :---- | :------------ | :----- | :---- | :---- |
 | [addAlcoholSmall](Context-Objects#addalcoholsmall-void) | Modify | PC/NPC | Alcohol | Small increase | None  | Void |
 | [addAlcoholMedium](Context-Objects#addalcoholmedium-void) | Modify | PC/NPC | Alcohol | Moderate increase | None  | Void |
@@ -37,7 +37,7 @@
 
 ## GameData
 
-| Function | Type | Scope | Mechanic/Item | Change | Parameters | Returns |
+| Method | Type | Scope | Mechanic/Item | Change | Parameters | Returns |
 | :------- | :--- | :---- | :------------ | :----- | :---- | :---- |
 | [addJobPerformanceModifier](Context-Objects#addjobperformancemodifierint-amount-void) | Modify | GameData | Employment | Adds a numeric modifier for the next time job performance is calculated.  | Integer amount | Void |
 | [addStat](Context-Objects#addstatstring-stat-void) | Modify	| GameData | Stats | Increments the stat by 1 | String `<stat>` | Void |

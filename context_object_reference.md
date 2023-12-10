@@ -1,11 +1,11 @@
 # Wiki conversion notes
 1. A few items need some researching
-2. The location of the function table is not final, as such as the "about the document" section does not yet mention it.
-3. Each section needs function tables created 
-4. Each function reference needs a link
-5. Each function needs it's own text without the "see below" type of reference from the ebook version since this is more of a reference guide approach
+2. The location of the method table is not final, as such as the "about the document" section does not yet mention it.
+3. Each section needs method tables created 
+4. Each method reference needs a link
+5. Each method needs it's own text without the "see below" type of reference from the ebook version since this is more of a reference guide approach
 6. Enum references should be links (obviously the enum documentation needs to be done for that).
-7. Each function or set of functions needs real world code examples, these will be taken from "additional_scenes/official_content" if nothing is available; I'll write something.
+7. Each method or function need real world code examples, these will be taken from "additional_scenes/official_content" if nothing is available; I'll write something.
 
 
 ----
@@ -84,7 +84,7 @@ Condition methods retrieve booleans, enum string values, other objects or genera
 
 ## Arousal
 
-| Function | Type | Scope | Mechanic/Item | Change | Parameters | Returns |
+| Method | Type | Scope | Mechanic/Item | Change | Parameters | Returns |
 | :------- | :--- | :---- | :------------ | :----- | :---- | :---- |
 | [addArousalTiny](#addarousaltiny-void) | Modify | PC/NPC | Arousal | Very small Increase (1) | None  | Void |
 | [addArousalSmall](#addarousalsmall-void) | Modify | PC/NPC | Arousal | Small increase (2) | None  | Void |
@@ -108,7 +108,7 @@ Condition methods retrieve booleans, enum string values, other objects or genera
 
 ## Alcohol
 
-| Function | Type | Scope | Mechanic/Item | Change | Parameters | Returns |
+| Method | Type | Scope | Mechanic/Item | Change | Parameters | Returns |
 | :------- | :--- | :---- | :------------ | :----- | :---- | :---- |
 | [addAlcoholSmall](#addalcoholsmall-void) | Modify | PC/NPC | Alcohol | Small increase | None  | Void |
 | [addAlcoholMedium](#addalcoholmedium-void) | Modify | PC/NPC | Alcohol | Moderate increase | None  | Void |
@@ -1907,6 +1907,16 @@ Often this will be combined with a larger arousal benefit. Enjoyment reduction c
 - The PC acts in a cute/innocent way towards an NPC with the `LIKES_CUTE` trait.
 - The PC initiates or encourages sexual activity when the NPC is horny and fancies her.
 - The PC does something romantic towards an NPC with a romantic personality and a *love* status of `SOME` or higher. Or, the other way around with a PC who has the romantic trait.
+
+## Methods
+
+| Method | Type | Scope | Mechanic/Item | Change | Parameters | Returns |
+| :------- | :--- | :---- | :------------ | :----- | :---- | :---- |
+| [addEnjoyTiny](#Context-Objects#addenjoytiny-void) | Modify | NPC | Enjoyment | Adds a tiny amount of enjoyment | None | Void |
+| [addEnjoySmall](#Context-Objects#addenjoysmall-void) | Modify | NPC | Enjoyment | Adds a small amount of enjoyment | None | Void |
+| [addEnjoyMedium](#Context-Objects#addenjoymedium-void) | Modify | NPC | Enjoyment | Adds a medium amount of enjoyment | None | Void |
+| [addEnjoyLarge](#Context-Objects#addenjoylarge-void) | Modify | NPC | Enjoyment | Adds a large amount of enjoyment | None | Void |
+| [addEnjoyVLarge](#Context-Objects#addenjoyvlarge-void) | Modify | NPC | Enjoyment | Adds a very large amount of enjoyment | None | Void |
 
 
 #### addEnjoyTiny(): void
